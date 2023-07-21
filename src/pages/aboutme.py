@@ -18,9 +18,26 @@ layout = dbc.Container([
 
 
     dbc.Container([
-        html.P('AREAS OF INTEREST',style={'font-family':'Arial','font-size':'26px',
+        html.P('SUMMARY',style={'font-size':'26px',
                                 'padding-bottom':'10px'}),
-        html.Br(),html.Br(),html.Br(),html.Br(),
+        html.P("With a diverse background encompassing more than 15 years of "\
+                "professional expertise across multiple sectors such as Pharmaceutical, "\
+                "Banking & Finance, and Property Development, I have recently embarked "\
+                "on a new journey within the dynamic realm of Data Science. Equipped "\
+                "with a Master's degree in Applied Data Science, I now assume the "\
+                "role of a dedicated Data Scientist, earnestly striving to make a "\
+                "meaningful impact within the industry.",
+                style={'padding-left':'40px','padding-top':'0px','font-family':'Georgia',
+                    'font-size':'16px'}),
+            html.P("My distinctive amalgamation of experience, skills, and knowledge "\
+                "serves as the impetus behind my unwavering dedication to continuous "\
+                "professional growth and collaboration with peers in the field. "\
+                "Fueled by an ardent enthusiasm for harnessing state-of-the-art "\
+                "technologies, I wholeheartedly focus on fostering positive "\
+                "transformation and contributing to the advancement of society "\
+                "through my endeavors.",
+                style={'padding-left':'40px','padding-bottom':'30px','font-family':'Georgia',
+                    'font-size':'16px'}),
     ],style={'padding-top':'70px','padding-bottom':'70px',},fluid=False,),
 
     dbc.Container([

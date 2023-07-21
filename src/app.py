@@ -27,7 +27,7 @@ navbar = dbc.NavbarSimple(
                                 className="me-1",
                                 href="/assets/resume.pdf",
                                 download="my_resume.pdf",external_link=True,
-                                style = {'font-size':'14px'}),
+                                style = {'font-size':'14px','font-weight':'500'}),
                                 style={'padding-top':'10px','padding-right':'0px',}),
 
     ],
@@ -37,7 +37,7 @@ navbar = dbc.NavbarSimple(
                     [
                         dbc.Col(html.Img(src=LOGO, height="30px",style={'justify':'end'})),
                         dbc.Col(html.H4('NICK NGUYEN', className="ms-2", 
-                                        style={'font-family':'Poppins',
+                                        style={'font-family':'Roboto',
                                                'font-weight':'700',
                                                'color' :'#444444'})),
                     ],

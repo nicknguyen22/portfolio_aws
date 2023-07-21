@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
-  font-family: 'Poppins';
-}
+  font-family: 'Roboto';
+  font-weight: 400;
+} 
 
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
@@ -52,7 +52,7 @@ a:active { text-decoration: none; }
   overflow-wrap: break-word;
   color: #444;
   font-size: 15px;
-  font-family: 'Poppins';
+  font-family: 'Roboto';
   font-weight: 500;
 }
 
@@ -60,15 +60,24 @@ a:active { text-decoration: none; }
   color: #36A0F4;
 }
 
+.logoicon {
+  color: white;
+}
+.logoicon:hover {
+  color: #36A0F4;
+}
+
+
+
 /* Background */
 
 .slider-thumb::before {
-  position: relative;
+  position: absolute;
   content: "";
   left: 0%;
-  top: -130px;
+  top: -240px;
   width: 2000px;
-  height: 390px;
+  height: 510px;
   background: #ffffff31;
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
   will-change: border-radius, transform, opacity;
@@ -81,7 +90,7 @@ a:active { text-decoration: none; }
 .slider-thumb0::before {
   position: absolute;
   content: "";
-  left: 10%;
+  left: 10%px;
   top: 0px;
   width: 400px;
   height: 390px;
@@ -90,7 +99,7 @@ a:active { text-decoration: none; }
   will-change: border-radius, transform, opacity;
   animation: sliderShape 5s linear infinite;
   display: block;
-  z-index: 1;
+  z-index: 0;
   -webkit-animation: sliderShape 5s linear infinite;
 }
 
@@ -98,16 +107,16 @@ a:active { text-decoration: none; }
   position: absolute;
   content: "";
   left: 0%;
-  top: -120px;
+  top: -230px;
   width: 2000px;
-  height: 390px;
+  height: 510px;
   background: #ffffff31;
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
   will-change: border-radius, transform, opacity;
-  animation: sliderShape 6s linear infinite;
+  animation: sliderShape 7s linear infinite;
   display: block;
   z-index: 1;
-  -webkit-animation: sliderShape 6s linear infinite;
+  -webkit-animation: sliderShape 7s linear infinite;
 }
 
 @keyframes sliderShape{
@@ -136,7 +145,7 @@ a:active { text-decoration: none; }
   align-items: center;
   justify-content: center;
   background-size: 300% 300%;
-  background-image: linear-gradient(45deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  background-image: linear-gradient(45deg, rgb(67, 79, 215) 0%, rgb(41, 169, 3) 100%);
   -webkit-animation: AnimateBG 20s ease infinite;
           animation: AnimateBG 20s ease infinite;
 }
