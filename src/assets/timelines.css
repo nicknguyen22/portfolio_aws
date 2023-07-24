@@ -1,13 +1,13 @@
 .timelines body {
     color: #768390;
     background: #FFF;
-    font-family: "Effra", Helvetica, sans-serif;
+    font-family: "Roboto";
     padding: 0;
     -webkit-font-smoothing: antialiased;
   }
   .timelines h1, .timelines h2, .timelines h3, .timelines h4, .timelines h5, .timelines h6 {
     color: #3D4351;
-    font-weight: 600;
+    font-weight: 500;
     margin-top: 0;
   }
   .timelines a {

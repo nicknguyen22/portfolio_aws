@@ -67,7 +67,12 @@ a:active { text-decoration: none; }
   color: #36A0F4;
 }
 
-
+.areatexticon {
+  color: #444;
+}
+.areatexticon:hover {
+  color: #36A0F4;
+}
 
 /* Background */
 

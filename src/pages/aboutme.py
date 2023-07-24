@@ -18,8 +18,7 @@ layout = dbc.Container([
 
 
     dbc.Container([
-        html.P('SUMMARY',style={'font-size':'26px',
-                                'padding-bottom':'10px'}),
+        html.P('SUMMARY',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
         html.P("With a diverse background encompassing more than 15 years of "\
                 "professional expertise across multiple sectors such as Pharmaceutical, "\
                 "Banking & Finance, and Property Development, I have recently embarked "\
@@ -43,8 +42,7 @@ layout = dbc.Container([
     dbc.Container([
 
         dbc.Container([
-            html.P('EXPERIENCE',style={'font-family':'Arial','font-size':'26px',
-                                               'padding-bottom':'10px'}),
+            html.P('EXPERIENCE',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
         ],fluid=False),
         dbc.Container([
 
@@ -283,6 +281,9 @@ layout = dbc.Container([
 
         ],fluid=False,class_name='timelines',style={'padding-left':'50px'}),
     ],style={'padding-top':'70px','padding-bottom':'70px','backgroundColor':'rgba(209, 228, 255, 0.2)'}
-    ,fluid=True,class_name='px-0'),
+    ,fluid=True,
+    # class_name='px-0'
+    ),
 
-],fluid=True,class_name='px-0',)
+],fluid=True,
+class_name='px-0',)

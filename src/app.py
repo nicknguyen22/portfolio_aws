@@ -32,7 +32,7 @@ navbar = dbc.NavbarSimple(
 
     ],
     
-    brand= html.A(
+    brand= dbc.Container(
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=LOGO, height="30px",style={'justify':'end'})),
@@ -42,9 +42,9 @@ navbar = dbc.NavbarSimple(
                                                'color' :'#444444'})),
                     ],
                     align="end",
-                    className="g-0",
+                    className="g-0 px-0",
                     style={'padding-left':'0px'},
-                ),
+                ),fluid='true',
             ),
     
     brand_href='https://nicknguyen.me',
@@ -52,7 +52,7 @@ navbar = dbc.NavbarSimple(
     sticky='top',
     dark=False,
     fluid=False,
-    class_name='px-0 shadow-sm p-3 mb-5 bg-white', 
+    class_name='px-0 shadow-sm p-2 mb-5 bg-white',
 )
 
 # # Define components
