@@ -26,7 +26,7 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.Button('RESUME', outline=False, color='primary',size = 'sm',
                                 className="me-1",
                                 href="/assets/resume.pdf",
-                                download="my_resume.pdf",external_link=True,
+                                download="resume.pdf",external_link=True,
                                 style = {'font-size':'14px','font-weight':'500'}),
                                 style={'padding-top':'10px','padding-right':'0px',}),
 

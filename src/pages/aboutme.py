@@ -35,9 +35,9 @@ layout = dbc.Container([
                 "technologies, I wholeheartedly focus on fostering positive "\
                 "transformation and contributing to the advancement of society "\
                 "through my endeavors.",
-                style={'padding-left':'40px','padding-bottom':'30px','font-family':'Georgia',
+                style={'padding-left':'40px','padding-bottom':'0px','font-family':'Georgia',
                     'font-size':'16px'}),
-    ],style={'padding-top':'70px','padding-bottom':'70px',},fluid=False,),
+    ],style={'padding-top':'50px','padding-bottom':'50px',},fluid=False,),
 
     dbc.Container([
 
@@ -280,7 +280,7 @@ layout = dbc.Container([
             ],className='timeline timeline-split',),
 
         ],fluid=False,class_name='timelines',style={'padding-left':'50px'}),
-    ],style={'padding-top':'70px','padding-bottom':'70px','backgroundColor':'rgba(209, 228, 255, 0.2)'}
+    ],style={'padding-top':'50px','padding-bottom':'50px','backgroundColor':'rgba(209, 228, 255, 0.2)'}
     ,fluid=True,
     # class_name='px-0'
     ),

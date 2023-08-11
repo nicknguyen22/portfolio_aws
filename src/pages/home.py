@@ -2,7 +2,7 @@ import dash
 from dash import Dash, dcc, html, Input, Output, callback, ctx
 import dash_bootstrap_components as dbc
 from dash_iconify import DashIconify
-import webbrowser
+# import webbrowser
 
 
 dash.register_page(
@@ -124,7 +124,7 @@ layout = dbc.Container([
                 
                 ],style={'max-width':'350px'}),
 
-            ],style={'padding-left':'40px','padding-top':'10px','padding-bottom':'60px',
+            ],style={'padding-left':'40px','padding-top':'10px','padding-bottom':'30px',
                     'padding-right':'40px',},justify='evenly'),
 
             dbc.Container([
@@ -135,7 +135,7 @@ layout = dbc.Container([
             style={'padding-left':'40px'},
             ),
 
-        ],style={'padding-top':'70px','padding-bottom':'80px'},
+        ],style={'padding-top':'50px','padding-bottom':'50px'},
         # class_name='px-0',
         ),
     ],style={'backgroundColor':'white'},fluid=True),
@@ -143,7 +143,7 @@ layout = dbc.Container([
     dbc.Container([
         dbc.Container([
             html.P('AREAS OF INTEREST',style={'font-size':'26px','font-weight':'500'}),
-            
+            html.Br(),
             dbc.Row([
                 dbc.Col([
                     html.Div([
@@ -151,13 +151,11 @@ layout = dbc.Container([
                         html.H4('Data Analytics & Visualisation',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('Passionate about crafting compelling data narratives, \
+                           I thrive on delving into intricate datasets to unveil \
+                           solutions for complex problems. I take pride in \
+                           transforming data into engaging visualizations that \
+                           resonate and communicate effectively.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -166,16 +164,14 @@ layout = dbc.Container([
                 dbc.Col([
                     html.Div([
                         DashIconify(icon="carbon:machine-learning-model", width=60),
-                        html.H4('Machine Learning',
+                        html.H4('Machine Learning & Deep Learning',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('I delve into their complexities to drive impactful \
+                           contributions in technology. The potential for industry \
+                           revolution and innovation within these fields captivates \
+                           me, prompting me to stay updated and embark on \
+                           transformative personal projects.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -187,13 +183,12 @@ layout = dbc.Container([
                         html.H4('Natural Language Processing',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('Fascinated by the nuances of communication, the ability \
+                           to imbue machines with the understanding of human \
+                           language opens avenues for enhanced interactions and \
+                           insights. I am driven to learn the depths of NLP, \
+                           exploring its potential in reshaping how we interact with \
+                           technology and information.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -211,13 +206,12 @@ layout = dbc.Container([
                         html.H4('Distributed Computing',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('Acknowledging its potential to extract insights from \
+                           extensive datasets, expedite data processing, and elevate \
+                           analytical capacities, I am committed to delving into \
+                           and mastering the complexities of distributed systems. \
+                           My goal is to adeptly employ this knowledge to streamline \
+                           the efficient processing and analysis of substantial datasets.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -226,16 +220,15 @@ layout = dbc.Container([
                 dbc.Col([
                     html.Div([
                         DashIconify(icon="carbon:cloud-app", width=60),
-                        html.H4('Cloud Platforms',
+                        html.H4('Cloud Services',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('I am deeply intrigued by the realm of Cloud Services, \
+                           including industry leaders like AWS, Azure, and Google Cloud. \
+                           Recognising their pivotal role in revolutionising how \
+                           businesses operate and scale, I am interested in understanding \
+                           their diverse tools to design innovative solutions, \
+                           optimise performance, and ensure seamless scalability.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -244,16 +237,14 @@ layout = dbc.Container([
                 dbc.Col([
                     html.Div([
                         DashIconify(icon="carbon:data-center", width=60),
-                        html.H4('Data Warehousing',
+                        html.H4('Database Design & Data Warehousing',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
-                    html.P('Driven by a passion for weaving captivating stories \
-                           through data. I relish the challenge of diving into \
-                           intricate and diverse datasets, uncovering the essence \
-                           of complex issues, and devising pragmatic solutions. \
-                           Data speaks volumes, and I take pride in translating \
-                           its tale into compelling visualisations that resonate \
-                           with others, ensuring clarity and engagement.'
+                    html.P('Understanding their fundamental importance as the bedrock \
+                           of effective data management, I am dedicated to delving into \
+                           the intricacies of these systems. The prospect of designing \
+                           robust data architectures that facilitate efficient storage, \
+                           retrieval, and analysis motivates me.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
                 ],width=4,style={'text-align':'center','padding-left':'30px',
@@ -265,9 +256,80 @@ layout = dbc.Container([
         ],
         # class_name='px-0'
         ),
-    ],style={'padding-top':'70px','padding-bottom':'70px','background-color':'#d1e4ff33'},
+    ],style={'padding-top':'50px','padding-bottom':'50px','background-color':'#d1e4ff33'},
     fluid=True,),   
 
+    dbc.Container([
+        dbc.Container([
+            html.P('SKILLS',style={'font-weight':'500','font-size':'26px','margin-bottom':'5px'}),
+            html.P('1 - Basic       2 - Novice      3 - Intermediate        4 - Advanced        5 - Expert',
+                   style={'white-space': 'pre','color':'gray','font-size':'13px'}),
+            html.Br(),
+
+            dbc.Row([
+                dbc.Col([
+                    html.P('Data Mining (Python and R) - 4',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Data Wrangling (Python and R) - 5',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Database (MySQL, SQLite and Postgres SQL) - 4',
+                           style={'white-space': 'pre', 'margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Operating system (Mac OS, Windows and Linux) - 4',
+                           style={'white-space': 'pre', 'margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),            
+                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+
+                dbc.Col([
+                    html.P('Data Analytics (Python, R and Excel) - 5',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Machine learning & Deep learning - 4',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Programming Language (Python, R and SQL) - 4',
+                           style={'white-space': 'pre', 'margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),        
+                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+
+                dbc.Col([
+                    html.P('Data Visualisation & Reporting (Power BI, Tableau, Python and R) - 5',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Cloud Services (AWS,Azure) - 2',
+                           style={'white-space': 'pre','margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=2, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),
+
+                    html.P('Distributed Computing (Hadoop,Hive and Spark) - 3',
+                           style={'white-space': 'pre', 'margin-bottom':'5px'}),
+                    html.Div(dbc.Progress(value=3, animated=True,striped=True,max=5),
+                             style={'padding-bottom':'30px'}),                                           
+                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+
+            ],style={},justify='evenly'),
+
+        ],style={'padding-top':'50px','padding-bottom':'50px'},
+        # class_name='px-0',
+        ),
+    ],style={'backgroundColor':'white'},fluid=True),
+    
     dbc.Container([
         dbc.Container([
             dbc.Row([
@@ -275,15 +337,14 @@ layout = dbc.Container([
                     html.H4('Contact Me'),
                     html.Br(),
                     dbc.Row([
-                        html.A(DashIconify(icon="mdi:email", width=30),
-                            className="logoicon me-2",id='mailto',href='#0'),
-
                         dcc.Location(id='hidden-div'),   
+                        html.A(DashIconify(icon="mdi:email", width=30),
+                            className="logoicon px-2",id='mailto',href='#0'),
                             
-                        html.A(DashIconify(icon="mdi:github", width=30),className="logoicon me-2",
+                        html.A(DashIconify(icon="mdi:github", width=30),className="logoicon px-2",
                             href='https://github.com/nicknguyen22', target='_blank'),
                         
-                        html.A(DashIconify(icon="mdi:linkedin", width=30),className="logoicon me-2",
+                        html.A(DashIconify(icon="mdi:linkedin", width=30),className="logoicon px-2",
                             href='https://www.seek.co.nz/profile/hieu-nguyen-VbL4nl8v3p', 
                             target='_blank'),
 
@@ -316,7 +377,8 @@ layout = dbc.Container([
     ],fluid=True,
     class_name='px-0',
     style={'backgroundColor':'#444444',},
-    )
+    ),
+
 ],
 fluid=True,
 class_name='px-0'
