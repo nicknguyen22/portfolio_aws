@@ -1,5 +1,5 @@
-import dash                                     
 from dash import Dash, dcc, html, Input, Output, callback
+import dash
 import dash_bootstrap_components as dbc
 
 dash.register_page(
@@ -9,35 +9,36 @@ dash.register_page(
 
 layout = dbc.Container([
     dbc.Container([
-            html.Div(className='slider-thumb'),
             html.Div(className='slider-thumb1'),
-            html.P('About Me',style={'color':'white','font-weight':'700', 'font-size':'40px',
-                                     'font-family':'Poppins'},className='page-name'),
+            html.Div(className='slider-thumb2'),
+            html.P('About Me',style={'color':'white','font-weight':'700', 'font-size':'60px',
+                                     },className='page-name'),
         ],class_name='bg1 px-0',fluid=True),
 
-
-
     dbc.Container([
-        html.P('SUMMARY',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
-        html.P("With a diverse background encompassing more than 15 years of "\
-                "professional expertise across multiple sectors such as Pharmaceutical, "\
-                "Banking & Finance, and Property Development, I have recently embarked "\
-                "on a new journey within the dynamic realm of Data Science. Equipped "\
-                "with a Master's degree in Applied Data Science, I now assume the "\
-                "role of a dedicated Data Scientist, earnestly striving to make a "\
-                "meaningful impact within the industry.",
+        dbc.Container([
+            html.P('PERSONAL STATEMENT',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
+        ],fluid=False),
+      
+            html.P("Diving headfirst into the captivating realm of data science, \
+                fortified with a master's degree and bolstered by over 15 years of \
+                versatile experience spanning pharmaceuticals, banking, real estate, \
+                and retail, I stand as a resolute data scientist committed to \
+                unraveling real-world business conundrums through the fusion of data \
+                science prowess and pragmatic business insights.",
                 style={'padding-left':'40px','padding-top':'0px','font-family':'Georgia',
                     'font-size':'16px'}),
-            html.P("My distinctive amalgamation of experience, skills, and knowledge "\
-                "serves as the impetus behind my unwavering dedication to continuous "\
-                "professional growth and collaboration with peers in the field. "\
-                "Fueled by an ardent enthusiasm for harnessing state-of-the-art "\
-                "technologies, I wholeheartedly focus on fostering positive "\
-                "transformation and contributing to the advancement of society "\
-                "through my endeavors.",
+            html.P("My distinct background propels my unwavering dedication to \
+                continuous evolution and collaborative pursuits. Fueled by an \
+                ardent drive to harness cutting-edge technologies, my primary \
+                focus resides in effecting positive metamorphoses and contributing \
+                to societal progress through data-centric endeavors. My paramount \
+                objective revolves around bridging the chasm between the realms \
+                of data science and business acumen, adeptly addressing authentic \
+                corporate challenges and delivering invaluable resolutions.",
                 style={'padding-left':'40px','padding-bottom':'0px','font-family':'Georgia',
                     'font-size':'16px'}),
-    ],style={'padding-top':'50px','padding-bottom':'50px',},fluid=False,),
+        ],style={'padding-top':'50px','padding-bottom':'50px',},fluid=False,),
 
     dbc.Container([
 
@@ -282,7 +283,6 @@ layout = dbc.Container([
         ],fluid=False,class_name='timelines',style={'padding-left':'50px'}),
     ],style={'padding-top':'50px','padding-bottom':'50px','backgroundColor':'rgba(209, 228, 255, 0.2)'}
     ,fluid=True,
-    # class_name='px-0'
     ),
 
 ],fluid=True,

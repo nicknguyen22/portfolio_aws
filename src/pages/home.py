@@ -1,8 +1,7 @@
-import dash                                     
 from dash import Dash, dcc, html, Input, Output, callback, ctx
+import dash
 import dash_bootstrap_components as dbc
 from dash_iconify import DashIconify
-# import webbrowser
 
 
 dash.register_page(
@@ -59,7 +58,7 @@ layout = dbc.Container([
                     html.A([
 
                         html.Div([
-                            html.Img(src='/assets/spt_prc.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
+                            html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
                         ],className='img'),
 
                         html.Div('Deep Learning with TensorFlow LSTM and Electricity Spot Price',
@@ -67,45 +66,27 @@ layout = dbc.Container([
 
                     ],className='img-cont',href='/spt_prc'
                     ),
-                    
-                    html.Hr(),
-                    html.P('Lorem ipsum dolor sit amet, utroque invidunt at sea, '\
-                           'sit tibique appareat et, te eum natum adhuc. Denique '\
-                           'eleifend pri cu. Fuisset maluisset percipitur ad qui, '\
-                           'magna audiam id mel. Et has partem mucius',
-                           style={'font-family':'Georgia','font-size':'16px'}
-                    ),
-                
-                ],style={'max-width':'350px'}),
+                ],style={'min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.A([
 
                         html.Div([
-                            html.Img(src='/assets/viz_1.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
+                            html.Img(src='/assets/img/viz_1.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
                         ],className='img'),
 
                         html.Div('Electricity Generation & Carbon Emission 2002-2022 '\
                                  'Visualisation', className='project-heading'),
 
-                    ],className='img-cont',href='/elec2022'
+                    ],className='img-cont',href='/portfolio/carb-emission'
                     ),
-                    
-                    html.Hr(),
-                    html.P('Lorem ipsum dolor sit amet, utroque invidunt at sea, '\
-                           'sit tibique appareat et, te eum natum adhuc. Denique '\
-                           'eleifend pri cu. Fuisset maluisset percipitur ad qui, '\
-                           'magna audiam id mel. Et has partem mucius',
-                           style={'font-family':'Georgia','font-size':'16px'}
-                    ),
-                
-                ],style={'max-width':'350px'}),
+                ],style={'min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.A([
 
                         html.Div([
-                            html.Img(src='/assets/viz_2.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
+                            html.Img(src='/assets/img/viz_2.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
                         ],className='img'),
 
                         html.Div('Analysing Electricity Usage Patterns and '\
@@ -113,16 +94,7 @@ layout = dbc.Container([
 
                     ],className='img-cont',href='/useranalysis'
                     ),
-                    
-                    html.Hr(),
-                    html.P('Lorem ipsum dolor sit amet, utroque invidunt at sea, '\
-                           'sit tibique appareat et, te eum natum adhuc. Denique '\
-                           'eleifend pri cu. Fuisset maluisset percipitur ad qui, '\
-                           'magna audiam id mel. Et has partem mucius',
-                           style={'font-family':'Georgia','font-size':'16px'}
-                    ),
-                
-                ],style={'max-width':'350px'}),
+                ],style={'min-width':360,'max-width':360}),
 
             ],style={'padding-left':'40px','padding-top':'10px','padding-bottom':'30px',
                     'padding-right':'40px',},justify='evenly'),
@@ -158,8 +130,7 @@ layout = dbc.Container([
                            resonate and communicate effectively.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.Div([
@@ -174,8 +145,7 @@ layout = dbc.Container([
                            transformative personal projects.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.Div([
@@ -191,15 +161,14 @@ layout = dbc.Container([
                            technology and information.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
 
             ],justify='evenly'),
             
             html.Br(),html.Br(),
 
-                        dbc.Row([
+            dbc.Row([
                 dbc.Col([
                     html.Div([
                         DashIconify(icon="carbon:ibm-cloud-pak-manta-automated-data-lineage", width=60),
@@ -214,8 +183,7 @@ layout = dbc.Container([
                            the efficient processing and analysis of substantial datasets.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.Div([
@@ -231,8 +199,7 @@ layout = dbc.Container([
                            optimise performance, and ensure seamless scalability.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.Div([
@@ -247,8 +214,7 @@ layout = dbc.Container([
                            retrieval, and analysis motivates me.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],width=4,style={'text-align':'center','padding-left':'30px',
-                                 'padding-right':'30px'}),
+                ],style={'text-align':'center','min-width':360,'max-width':360}),
 
 
             ],justify='evenly'),
@@ -287,7 +253,7 @@ layout = dbc.Container([
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),            
-                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+                ],style={'min-width':360,'max-width':360}),
 
                 dbc.Col([
                     html.P('Data Analytics (Python, R and Excel) - 5',
@@ -304,10 +270,10 @@ layout = dbc.Container([
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),        
-                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+                ],style={'min-width':360,'max-width':360}),
 
                 dbc.Col([
-                    html.P('Data Visualisation & Reporting (Power BI, Tableau, Python and R) - 5',
+                    html.P('Data Visualisation (Power BI, Tableau, Python,and R) - 5',
                            style={'white-space': 'pre','margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
@@ -321,7 +287,7 @@ layout = dbc.Container([
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=3, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),                                           
-                ],width=4,style={'padding-left':'30px','padding-right':'30px'}),
+                ],style={'min-width':360,'max-width':360}),
 
             ],style={},justify='evenly'),
 
@@ -334,8 +300,7 @@ layout = dbc.Container([
         dbc.Container([
             dbc.Row([
                 dbc.Col([
-                    html.H4('Contact Me'),
-                    html.Br(),
+                    html.H4('Contact Me',style={'padding-bottom':'5px'}),
                     dbc.Row([
                         dcc.Location(id='hidden-div'),   
                         html.A(DashIconify(icon="mdi:email", width=30),
@@ -350,17 +315,16 @@ layout = dbc.Container([
 
                     ],style={'display':'inline'}),
             
-                ],width = 3,style={'text-align':'left'}),
+                ],style={'text-align':'left','min-width':360,'max-width':360,'padding-top':'50px'}),
 
                 dbc.Col([
-                    html.H4('About This Page'),
-                    html.Br(),
+                    html.H4('About This Page',style={'padding-bottom':'5px'}),
                     html.P('This website was coded in Python, Flask Framework, and CSS based on Dash\
                         Plotly. It is hosted on a EC2 instance from Amazon Web Services (AWS). \
                         Python portfolio web applications are deployed on AWS, while \
                         R Shiny Apps are deployed on Microsoft Azure',
                         style={'font-size':'16px', 'font-family':'Georgia'}),
-                ],width = 9),
+                ],style={'padding-top':'50px'}),
 
             dbc.Row([
                 dcc.Markdown(''' Copyright &copy; 2023 | Nick Nguyen. All rights reserved.''',
@@ -369,7 +333,7 @@ layout = dbc.Container([
                                                         'font-size':'12px',
                                                         'margin-top':'-10px'}),
             ])
-        ],style={'color':'white', 'padding-top':'50px','padding-bottom':'10px'}),
+        ],style={'color':'white','padding-bottom':'10px'}),
             ],
             # class_name='px-0'
             ),

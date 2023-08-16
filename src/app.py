@@ -1,6 +1,6 @@
-import dash
 import dash_bootstrap_components as dbc
-from dash import Input, Output, State, dcc, html
+import dash
+from dash import Dash, Input, Output, State, dcc, html
 
 LOGO = '/assets/logo.jpg'
 
@@ -9,20 +9,15 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink('HOME', href='/',style={'padding-right':'30px',
                                                         'font-size':'14px',
                                                         'font-weight':'500'},)),
+        
         dbc.NavItem(dbc.NavLink('ABOUT ME', href='/aboutme',style={'padding-right':'30px',
                                                                    'font-size':'14px',
                                                                    'font-weight':'500'},)),
-        dbc.DropdownMenu(
-            children=[
-                # dbc.DropdownMenuItem("More pages", header=True),
-                dbc.DropdownMenuItem('Page 2', href='#'),
-                dbc.DropdownMenuItem('Page 3', href='#'),
-            ],
-            nav=True,
-            in_navbar=True,
-            label='PORTFOLIO',
-            style={'padding-right':'30px','font-size':'14px','font-weight':'500'},
-        ),
+        
+        dbc.NavItem(dbc.NavLink('PORTFOLIO', href='/portfolio',style={'padding-right':'30px',
+                                                                   'font-size':'14px',
+                                                                   'font-weight':'500'},)),
+    
         dbc.NavItem(dbc.Button('RESUME', outline=False, color='primary',size = 'sm',
                                 className="me-1",
                                 href="/assets/resume.pdf",
@@ -79,8 +74,6 @@ app.layout = dbc.Container([
     class_name='px-0'
 
 )
-
-
 
 if __name__ == "__main__":
     app.run_server(host='0.0.0.0', port=80, debug=False)
