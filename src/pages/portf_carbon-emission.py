@@ -8,6 +8,6 @@ dash.register_page(
     title='Carbon Emission and Carbon Intensity of Electricity Generation Analysis',)
 
 layout = dbc.Container(
-    html.Iframe(src='http://13.55.49.102:8050/',style={"height": "1067px", "width": "100%"}),
+    html.Iframe(src="http://13.55.49.102:8050/",style={"height": "1067px", "width": "100%"}),
     style={'padding-top':'50px'},fluid = True,
     )

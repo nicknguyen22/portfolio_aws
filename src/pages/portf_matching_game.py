@@ -26,7 +26,10 @@ layout = dbc.Container([
         dbc.Col(html.Img(src='/assets/img/game_2.jpg', className = 'resp')),
     ],justify='evenly'),
     html.Br(),
-    html.A('Codes on Github Repository',href="https://github.com/nicknguyen22/Python_memory_game.git", target="_blank"),
+    html.A('Codes on Github Repository',
+        href = "http://13.55.49.102:8050/",
+        # href="https://github.com/nicknguyen22/Python_memory_game.git", 
+        target="_blank"),
 
 ],style={'padding-top':'100px'},fluid = False,
 )
