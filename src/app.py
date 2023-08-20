@@ -1,6 +1,7 @@
-import dash_bootstrap_components as dbc
+from dash import Dash, dcc, html, Input, Output, callback, ctx
 import dash
-from dash import Dash, Input, Output, State, dcc, html
+import dash_bootstrap_components as dbc
+from dash_iconify import DashIconify
 
 LOGO = '/assets/logo.jpg'
 
@@ -23,7 +24,7 @@ navbar = dbc.NavbarSimple(
                                 href="/assets/resume.pdf",
                                 download="resume.pdf",external_link=True,
                                 style = {'font-size':'14px','font-weight':'500'}),
-                                style={'padding-top':'10px','padding-right':'0px',}),
+                                style={'padding-top':'10px','padding-right':'30px',}),
 
     ],
     
@@ -39,7 +40,7 @@ navbar = dbc.NavbarSimple(
                     align="end",
                     className="g-0 px-0",
                     style={'padding-left':'0px'},
-                ),fluid='true',
+                ),fluid=True,
             ),
     
     brand_href='https://nicknguyen.me',
@@ -49,6 +50,51 @@ navbar = dbc.NavbarSimple(
     fluid=False,
     class_name='px-0 shadow-sm p-2 mb-5 bg-white',
 )
+
+footer =  dbc.Container([
+        dbc.Container([
+            dbc.Row([
+                dbc.Col([
+                    html.H4('Contact Me',style={'padding-bottom':'5px'}),
+                    dbc.Row([
+                        dcc.Location(id='hidden-div'),   
+                        html.A(DashIconify(icon="mdi:email", width=30),
+                            className="logoicon px-2",id='mailto',href='#0'),
+                            
+                        html.A(DashIconify(icon="mdi:github", width=30),className="logoicon px-2",
+                            href='https://github.com/nicknguyen22', target='_blank'),
+                        
+                        html.A(DashIconify(icon="mdi:linkedin", width=30),className="logoicon px-2",
+                            href='https://www.seek.co.nz/profile/hieu-nguyen-VbL4nl8v3p', 
+                            target='_blank'),
+
+                    ],style={'display':'inline'}),
+            
+                ],style={'text-align':'left','min-width':200,'max-width':200,'padding-bottom':'30px'}),
+
+                dbc.Col([
+                    html.H4('About This Page',style={'padding-bottom':'5px'}),
+                    html.P('This website was coded in Python, Flask Framework, and CSS based on Dash\
+                        Plotly. It is hosted on a EC2 instance from Amazon Web Services (AWS). \
+                        Python portfolio web applications are deployed on AWS, while \
+                        R Shiny Apps are deployed on Microsoft Azure',
+                        style={'font-size':'16px', 'font-family':'Georgia'}),
+                ],style={'min-width':360,}),
+
+            dbc.Row([
+                dcc.Markdown(''' Copyright &copy; 2023 | Nick Nguyen. All rights reserved.''',
+                style={'text-align':'center','padding-top':'30px','font-size':'12px'}),
+                html.P('Proudly powered by coffee.',style={'text-align':'center',
+                                                        'font-size':'12px',
+                                                        'margin-top':'-10px'}),
+            ])
+        ],style={'color':'white'}),
+            ],style ={'max-width':'1080px','padding-top':'50px','padding-bottom':'20px'},
+            ),
+    
+    ],fluid=True,
+    style={'backgroundColor':'#444444'}
+    )
 
 # # Define components
 app = dash.Dash(__name__, 
@@ -67,6 +113,7 @@ server = app.server
 app.layout = dbc.Container([
     navbar,
     dash.page_container,
+    footer,
     ],style={
        'backgroundColor':'white',
     },
@@ -74,6 +121,15 @@ app.layout = dbc.Container([
     class_name='px-0'
 
 )
+
+@callback(
+    Output('hidden-div','href'),
+    Input('mailto', 'n_clicks'),
+)
+def mailto_button(btn1):
+    if 'mailto' == ctx.triggered_id:
+        return 'mailto:hieu@nicknguyen.me'
+
 
 if __name__ == "__main__":
     app.run_server(host='0.0.0.0', port=80, debug=False)

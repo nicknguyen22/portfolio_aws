@@ -10,7 +10,7 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 .nav-link:focus {
-  color: #36A0F4;
+  color: #219bff;
 }
 
 .navbar {
@@ -21,49 +21,10 @@ a:active { text-decoration: none; }
   z-index:100;
 }
 
-.img-cont {
-  position: relative;
-  width: 100%;
-}
-
-.img-cont .img {
-  filter: grayscale(1);
-  border-radius: 5px;
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  overflow:hidden;
-}
-
-.img-cont:hover .img {
-  filter: grayscale(0);
-
-}
-
-.img-cont .project-heading {
-  padding-top: 15px;
-  padding-left: 5px;
-  background: none;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  overflow-wrap: break-word;
-  color: #444;
-  font-size: 15px;
-  font-family: 'Roboto';
-  font-weight: 500;
-}
-
-.img-cont:hover .project-heading {
-  color: #36A0F4;
-}
-
 .accordion-button {
   font-size: 26px;
   font-weight: 500;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .accordion-button:not(.collapsed) {

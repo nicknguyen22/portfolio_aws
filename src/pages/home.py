@@ -3,11 +3,11 @@ import dash
 import dash_bootstrap_components as dbc
 from dash_iconify import DashIconify
 
-
 dash.register_page(
     __name__,
     path='/',
     title='Nick Nguyen',)
+
 
 layout = dbc.Container([
     
@@ -31,19 +31,19 @@ layout = dbc.Container([
                                                                 'font-family':'Georgia'}),
                 ],className='page-name'),
             ],style = {'text-align':'left'}),
-            dbc.Row([
-                    dbc.Col(dbc.Button('ABOUT ME', color='light',href="/aboutme",
+            dbc.Container([
+                dbc.Col(dbc.Button('ABOUT ME', outline=False, href="/aboutme", color = 'light',
                                        style={'font-size':'14px', 'font-weight':'500',\
-                                              'color':'#444','z-index':'15'}))
+                                              'z-index':'15','color':'#219bff'}))
                 ],class_name='px-0',style={'padding-top':'10px',}), 
-        ],style= {
+    
+            ],style= {
                 'color':'white',
                 'padding-top':'110px',
-                'padding-left':'50px',
                 'padding-bottom':'50px',
-                },),
-    ],fluid=True,class_name='bg0 px-0',
-    style= {
+                'max-width':'1080px',
+                }),
+        ],fluid=True,class_name='bg0',style= {
                 'width':'100%',
                 'height':'100%',
                 'max-height':'500px'
@@ -53,63 +53,150 @@ layout = dbc.Container([
     dbc.Container([
         dbc.Container([
             html.P('MOST RECENT PROJECTS ',style={'font-weight':'500','font-size':'26px'}),
-            dbc.Row([
-                dbc.Col([
-                    html.A([
-
-                        html.Div([
-                            html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
-                        ],className='img'),
-
-                        html.Div('Deep Learning with TensorFlow LSTM and Electricity Spot Price',
-                                     className='project-heading'),
-
-                    ],className='img-cont',href='/spt_prc'
-                    ),
+            
+        dbc.Row([
+            dbc.Col([
+                html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%',
+                        'max-width':'360px','height':'auto','border-radius':'5px'}),
                 ],style={'min-width':360,'max-width':360}),
 
-                dbc.Col([
-                    html.A([
+            dbc.Col([
+                html.P('Deep Learning with TensorFlow LSTM and Electricity Spot Price',
+                    style = {'font-size':'15px','text-transform':'uppercase',
+                        'font-weight':'700'}),
+                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
+                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
+                    cillum dolore eu fugiat nulla pariatur.',
+                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                dbc.Row([
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                            outline=True, color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='http://13.55.49.102:8050/',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
 
-                        html.Div([
-                            html.Img(src='/assets/img/viz_1.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
-                        ],className='img'),
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                            outline=True, 
+                            color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
+                        ]),
+                    ]),
 
-                        html.Div('Electricity Generation & Carbon Emission 2002-2022 '\
-                                 'Visualisation', className='project-heading'),
+                ],style={'padding-bottom':'20px','padding-top':'20px'}),
 
-                    ],className='img-cont',href='/portfolio/carb-emission'
-                    ),
+        html.Hr(style={'color':'#adadad'}),
+
+        dbc.Row([
+            dbc.Col([
+                html.Img(src='/assets/img/viz_1.jpg', style={'width':'100%',
+                        'max-width':'360px','height':'auto','border-radius':'5px'}),
                 ],style={'min-width':360,'max-width':360}),
 
-                dbc.Col([
-                    html.A([
+            dbc.Col([
+                html.P('Electricity Generation & Carbon Emission 2002-2022 Visualisation',
+                    style = {'font-size':'15px','text-transform':'uppercase',
+                        'font-weight':'700'}),
+                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
+                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
+                    cillum dolore eu fugiat nulla pariatur.',
+                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                dbc.Row([
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                            outline=True, color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
 
-                        html.Div([
-                            html.Img(src='/assets/img/viz_2.jpg', style={'width':'100%','max-width':'350px','height':'auto'}),
-                        ],className='img'),
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                            outline=True, 
+                            color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
+                        ]),
+                    ]),
 
-                        html.Div('Analysing Electricity Usage Patterns and '\
-                                 'Interacting with Data Tables', className='project-heading'),
+            ],style={'padding-bottom':'20px','padding-top':'20px'}),
 
-                    ],className='img-cont',href='/useranalysis'
-                    ),
+        html.Hr(style={'color':'#adadad'}),
+
+        dbc.Row([
+            dbc.Col([
+                html.Img(src='/assets/img/viz_2.jpg', style={'width':'100%',
+                        'max-width':'360px','height':'auto','border-radius':'5px'}),
                 ],style={'min-width':360,'max-width':360}),
 
-            ],style={'padding-left':'40px','padding-top':'10px','padding-bottom':'30px',
-                    'padding-right':'40px',},justify='evenly'),
+            dbc.Col([
+                html.P('Analysing Electricity Usage Patterns and Interacting with Data Tables',
+                    style = {'font-size':'15px','text-transform':'uppercase',
+                        'font-weight':'700'}),
+                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
+                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
+                    cillum dolore eu fugiat nulla pariatur.',
+                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                dbc.Row([
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                            outline=True, color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
 
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                            outline=True, 
+                            color='primary',
+                            size = 'sm',
+                            className="rounded-pill me-1",
+                            href='',
+                            disabled=False,
+                            target="_blank",
+                            style = {'font-size':'13px','font-weight':'500',
+                                    'padding-left':'15px','padding-right':'15px'}),),
+                        ])
+                    ]),
+                ],style={'padding-bottom':'40px','padding-top':'20px'}),
+         
             dbc.Container([
                 dbc.Col(dbc.Button('MY PORTFOLIO', color='primary',href="/portfolio",
                     style={'font-weight':'500', 'font-size':'14px'}))
             ],
-            # class_name='px-0',
-            style={'padding-left':'40px'},
+            class_name='px-0',
             ),
 
-        ],style={'padding-top':'50px','padding-bottom':'50px'},
-        # class_name='px-0',
-        ),
+        ],style={'padding-top':'50px','padding-bottom':'50px','max-width':'1080px',}),
     ],style={'backgroundColor':'white'},fluid=True),
 
     dbc.Container([
@@ -130,7 +217,8 @@ layout = dbc.Container([
                            resonate and communicate effectively.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
                     html.Div([
@@ -145,7 +233,8 @@ layout = dbc.Container([
                            transformative personal projects.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
                     html.Div([
@@ -161,7 +250,8 @@ layout = dbc.Container([
                            technology and information.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
 
             ],justify='evenly'),
@@ -183,7 +273,8 @@ layout = dbc.Container([
                            the efficient processing and analysis of substantial datasets.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
                     html.Div([
@@ -199,12 +290,13 @@ layout = dbc.Container([
                            optimise performance, and ensure seamless scalability.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
                     html.Div([
                         DashIconify(icon="carbon:data-center", width=60),
-                        html.H4('Database Design & Data Warehousing',
+                        html.H4('Database & Data Warehousing',
                                 style={'padding-top':'40px','padding-bottom':'20px'}),
                     ],className='areatexticon'),
                     html.P('Understanding their fundamental importance as the bedrock \
@@ -214,16 +306,15 @@ layout = dbc.Container([
                            retrieval, and analysis motivates me.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360}),
+                ],style={'text-align':'center','min-width':360,'max-width':360,
+                         'padding-left':'10px','padding-right':'10px'}),
 
 
             ],justify='evenly'),
 
-        ],
-        # class_name='px-0'
+        ],style={'padding-top':'50px','padding-bottom':'50px','max-width':'1080px'},
         ),
-    ],style={'padding-top':'50px','padding-bottom':'50px','background-color':'#d1e4ff33'},
-    fluid=True,),   
+    ],style={'background-color':'#d1e4ff33'},fluid=True),  
 
     dbc.Container([
         dbc.Container([
@@ -291,68 +382,14 @@ layout = dbc.Container([
 
             ],style={},justify='evenly'),
 
-        ],style={'padding-top':'50px','padding-bottom':'50px'},
-        # class_name='px-0',
+        ],style={'padding-top':'50px','padding-bottom':'50px','max-width':'1080px'},
         ),
     ],style={'backgroundColor':'white'},fluid=True),
     
-    dbc.Container([
-        dbc.Container([
-            dbc.Row([
-                dbc.Col([
-                    html.H4('Contact Me',style={'padding-bottom':'5px'}),
-                    dbc.Row([
-                        dcc.Location(id='hidden-div'),   
-                        html.A(DashIconify(icon="mdi:email", width=30),
-                            className="logoicon px-2",id='mailto',href='#0'),
-                            
-                        html.A(DashIconify(icon="mdi:github", width=30),className="logoicon px-2",
-                            href='https://github.com/nicknguyen22', target='_blank'),
-                        
-                        html.A(DashIconify(icon="mdi:linkedin", width=30),className="logoicon px-2",
-                            href='https://www.seek.co.nz/profile/hieu-nguyen-VbL4nl8v3p', 
-                            target='_blank'),
-
-                    ],style={'display':'inline'}),
-            
-                ],style={'text-align':'left','min-width':360,'max-width':360,'padding-top':'50px'}),
-
-                dbc.Col([
-                    html.H4('About This Page',style={'padding-bottom':'5px'}),
-                    html.P('This website was coded in Python, Flask Framework, and CSS based on Dash\
-                        Plotly. It is hosted on a EC2 instance from Amazon Web Services (AWS). \
-                        Python portfolio web applications are deployed on AWS, while \
-                        R Shiny Apps are deployed on Microsoft Azure',
-                        style={'font-size':'16px', 'font-family':'Georgia'}),
-                ],style={'padding-top':'50px'}),
-
-            dbc.Row([
-                dcc.Markdown(''' Copyright &copy; 2023 | Nick Nguyen. All rights reserved.''',
-                style={'text-align':'center','padding-top':'30px','font-size':'12px'}),
-                html.P('Proudly powered by coffee.',style={'text-align':'center',
-                                                        'font-size':'12px',
-                                                        'margin-top':'-10px'}),
-            ])
-        ],style={'color':'white','padding-bottom':'10px'}),
-            ],
-            # class_name='px-0'
-            ),
-    
-    ],fluid=True,
-    class_name='px-0',
-    style={'backgroundColor':'#444444',},
-    ),
-
 ],
 fluid=True,
 class_name='px-0'
 )
 
-@callback(
-    Output('hidden-div','href'),
-    Input('mailto', 'n_clicks'),
-)
-def mailto_button(btn1):
-    if 'mailto' == ctx.triggered_id:
-        return 'mailto:hieu@nicknguyen.me'
+
 

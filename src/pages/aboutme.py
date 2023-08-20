@@ -17,35 +17,35 @@ layout = dbc.Container([
 
     dbc.Container([
         dbc.Container([
-            html.P('PERSONAL STATEMENT',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
-        ],fluid=False),
-      
-            html.P("Diving headfirst into the captivating realm of data science, \
-                fortified with a master's degree and bolstered by over 15 years of \
-                versatile experience spanning pharmaceuticals, banking, real estate, \
-                and retail, I stand as a resolute data scientist committed to \
-                unraveling real-world business conundrums through the fusion of data \
-                science prowess and pragmatic business insights.",
-                style={'padding-left':'40px','padding-top':'0px','font-family':'Georgia',
+            html.P('PERSONAL STATEMENT',style={'font-size':'26px','font-weight':'500',
+            'padding-bottom':'10px'}),
+              
+            html.P("I've enthusiastically delved into the exciting world of data \
+                science. With a master's degree and over 15 years of experience \
+                in various fields like banking, pharmaceuticals, real estate, \
+                and retail, I'm a determined data scientist. My goal is to use \
+                my expertise to solve practical business problems by combining \
+                data science skills with real-world business knowledge.",
+                style={'padding-top':'0px','font-family':'Georgia',
                     'font-size':'16px'}),
-            html.P("My distinct background propels my unwavering dedication to \
-                continuous evolution and collaborative pursuits. Fueled by an \
-                ardent drive to harness cutting-edge technologies, my primary \
-                focus resides in effecting positive metamorphoses and contributing \
-                to societal progress through data-centric endeavors. My paramount \
-                objective revolves around bridging the chasm between the realms \
-                of data science and business acumen, adeptly addressing authentic \
-                corporate challenges and delivering invaluable resolutions.",
-                style={'padding-left':'40px','padding-bottom':'0px','font-family':'Georgia',
+            html.P("My unique background drives me to constantly learn and \
+                collaborate with others. I'm passionate about using the latest \
+                technologies to make positive changes and contribute to society \
+                through data-driven projects. My main aim is to bridge the gap \
+                between data science and business, effectively addressing real \
+                corporate challenges and providing valuable solutions.",
+                style={'padding-bottom':'0px','font-family':'Georgia',
                     'font-size':'16px'}),
-        ],style={'padding-top':'50px','padding-bottom':'50px',},fluid=False,),
+        ],fluid=False,style={'padding-top':'50px','padding-bottom':'50px',
+                            'max-width':'1080px'}, className ='px-0',
+        ),
+    ],fluid=True,),
 
     dbc.Container([
 
         dbc.Container([
-            html.P('EXPERIENCE',style={'font-size':'26px','font-weight':'500','padding-bottom':'10px'}),
-        ],fluid=False),
-        dbc.Container([
+            html.P('EXPERIENCE',style={'font-size':'26px','font-weight':'500',
+            'padding-bottom':'10px',}),
 
             html.Ul([
                 
@@ -60,6 +60,18 @@ layout = dbc.Container([
 
                 html.Li([
                     html.Div(
+                        html.Span('Nov 2022 - Present'),className='timeline-info'
+                    ),
+                    html.Div(className='timeline-marker'),
+                    html.Div([
+                        html.H5('Data Scientist',className='timeline-title'),
+                        html.P('Nexbe Ltd., New Zealand',style={'padding-top':'10px',
+                                                                'font-size':'16px'}),
+                    ],className='timeline-content'),
+                ],className='timeline-item'),
+
+                html.Li([
+                    html.Div(
                         html.Span('Feb 2022 - Feb 2023'),className='timeline-info'
                     ),
                     html.Div(className='timeline-marker'),
@@ -69,18 +81,6 @@ layout = dbc.Container([
                                                                  'font-size':'16px'}),
                         html.P('Graduation with Distinction',style={'font-family':'Georgia',
                                                                     'font-size':'16px'}),
-                    ],className='timeline-content'),
-                ],className='timeline-item'),
-
-                html.Li([
-                    html.Div(
-                        html.Span('Nov 2022 - Present'),className='timeline-info'
-                    ),
-                    html.Div(className='timeline-marker'),
-                    html.Div([
-                        html.H5('Data Scientist',className='timeline-title'),
-                        html.P('Nexbe Ltd., New Zealand',style={'padding-top':'10px',
-                                                                'font-size':'16px'}),
                     ],className='timeline-content'),
                 ],className='timeline-item'),
 
@@ -278,11 +278,11 @@ layout = dbc.Container([
                     ),
                 ],className='timeline-item period'),
 
-            ],className='timeline timeline-split',),
+            ],className='timeline timeline-split'),
 
-        ],fluid=False,class_name='timelines',style={'padding-left':'50px'}),
-    ],style={'padding-top':'50px','padding-bottom':'50px','backgroundColor':'rgba(209, 228, 255, 0.2)'}
-    ,fluid=True,
+            ],fluid=False,class_name='timelines',style={'padding-top':'50px',
+            'padding-bottom':'50px','max-width':'1080px'}),
+        ],style={'background-color':'#d1e4ff33'},fluid=True,
     ),
 
 ],fluid=True,
