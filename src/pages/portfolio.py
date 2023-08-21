@@ -17,7 +17,9 @@ layout = dbc.Container([
             html.P('Portfolio',
                 style={'color':'white','font-weight':'700', 'font-size':'60px',},
                 className='page-name'),
-        ],style={'max-width':'1080px'},class_name='px-0'),
+        ], fluid = True,
+        #style={'max-width':'1080px'},
+        class_name='px-0'),
         ],class_name='bg2 px-0',fluid=True),
 
     # All Accordions
