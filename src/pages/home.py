@@ -15,7 +15,7 @@ layout = dbc.Container([
         dbc.Container([
             dbc.Row([
                 html.Div(className='slider-thumb0'),
-                html.Br(),html.Br(),
+                html.Br(),
                 html.Div([
                     html.P("Greetings ! I go by the name",style={'font-size':'16px',
                                                                 'font-family':'Georgia'}),
@@ -57,8 +57,8 @@ layout = dbc.Container([
         dbc.Row([
             dbc.Col([
                 html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%',
-                        'max-width':'360px','height':'auto','border-radius':'5px'}),
-                ],style={'min-width':360,'max-width':360}),
+                        'max-width':'350px','height':'auto','border-radius':'5px'}),
+                ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
                 html.P('Deep Learning with TensorFlow LSTM and Electricity Spot Price',
@@ -103,8 +103,8 @@ layout = dbc.Container([
         dbc.Row([
             dbc.Col([
                 html.Img(src='/assets/img/viz_1.jpg', style={'width':'100%',
-                        'max-width':'360px','height':'auto','border-radius':'5px'}),
-                ],style={'min-width':360,'max-width':360}),
+                        'max-width':'350px','height':'auto','border-radius':'5px'}),
+                ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
                 html.P('Electricity Generation & Carbon Emission 2002-2022 Visualisation',
@@ -149,8 +149,8 @@ layout = dbc.Container([
         dbc.Row([
             dbc.Col([
                 html.Img(src='/assets/img/viz_2.jpg', style={'width':'100%',
-                        'max-width':'360px','height':'auto','border-radius':'5px'}),
-                ],style={'min-width':360,'max-width':360}),
+                        'max-width':'350px','height':'auto','border-radius':'5px'}),
+                ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
                 html.P('Analysing Electricity Usage Patterns and Interacting with Data Tables',
@@ -217,7 +217,7 @@ layout = dbc.Container([
                            resonate and communicate effectively.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
@@ -233,7 +233,7 @@ layout = dbc.Container([
                            transformative personal projects.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
@@ -250,7 +250,7 @@ layout = dbc.Container([
                            technology and information.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
 
@@ -273,7 +273,7 @@ layout = dbc.Container([
                            the efficient processing and analysis of substantial datasets.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
@@ -290,7 +290,7 @@ layout = dbc.Container([
                            optimise performance, and ensure seamless scalability.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
                 dbc.Col([
@@ -306,7 +306,7 @@ layout = dbc.Container([
                            retrieval, and analysis motivates me.'
                            ,style={'font-size':'16px','font-family':'Georgia'}),
 
-                ],style={'text-align':'center','min-width':360,'max-width':360,
+                ],style={'text-align':'center','min-width':350,'max-width':350,
                          'padding-left':'10px','padding-right':'10px'}),
 
 
@@ -325,29 +325,29 @@ layout = dbc.Container([
 
             dbc.Row([
                 dbc.Col([
-                    html.P('Data Mining (Python and R) - 4',
+                    html.P('Data Mining (Python & R) - 4',
                            style={'white-space': 'pre','margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
 
-                    html.P('Data Wrangling (Python and R) - 5',
+                    html.P('Data Wrangling (Python & R) - 5',
                            style={'white-space': 'pre','margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
 
-                    html.P('Database (MySQL, SQLite and Postgres SQL) - 4',
+                    html.P('Database (MySQL, SQLite & Postgres SQL) - 4',
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
 
-                    html.P('Operating system (Mac OS, Windows and Linux) - 4',
+                    html.P('Operating system (Mac OS, Windows & Linux) - 4',
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),            
-                ],style={'min-width':360,'max-width':360}),
+                ],style={'min-width':350,'max-width':350}),
 
                 dbc.Col([
-                    html.P('Data Analytics (Python, R and Excel) - 5',
+                    html.P('Data Analytics (Python, R & Excel) - 5',
                            style={'white-space': 'pre','margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
@@ -357,14 +357,14 @@ layout = dbc.Container([
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
 
-                    html.P('Programming Language (Python, R and SQL) - 4',
+                    html.P('Programming Language (Python, R & SQL) - 4',
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=4, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),        
-                ],style={'min-width':360,'max-width':360}),
+                ],style={'min-width':350,'max-width':350}),
 
                 dbc.Col([
-                    html.P('Data Visualisation (Power BI, Tableau, Python,and R) - 5',
+                    html.P('Data Visualisation (PowerBI, Tableau, Python & R) - 5',
                            style={'white-space': 'pre','margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=5, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
@@ -374,11 +374,11 @@ layout = dbc.Container([
                     html.Div(dbc.Progress(value=2, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),
 
-                    html.P('Distributed Computing (Hadoop,Hive and Spark) - 3',
+                    html.P('Distributed Computing (Hadoop, Hive & Spark) - 3',
                            style={'white-space': 'pre', 'margin-bottom':'5px'}),
                     html.Div(dbc.Progress(value=3, animated=True,striped=True,max=5),
                              style={'padding-bottom':'30px'}),                                           
-                ],style={'min-width':360,'max-width':360}),
+                ],style={'min-width':350,'max-width':350}),
 
             ],style={},justify='evenly'),
 

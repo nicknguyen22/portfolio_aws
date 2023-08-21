@@ -79,7 +79,7 @@ footer =  dbc.Container([
                         Python portfolio web applications are deployed on AWS, while \
                         R Shiny Apps are deployed on Microsoft Azure',
                         style={'font-size':'16px', 'font-family':'Georgia'}),
-                ],style={'min-width':360,}),
+                ],style={'min-width':350,}),
 
             dbc.Row([
                 dcc.Markdown(''' Copyright &copy; 2023 | Nick Nguyen. All rights reserved.''',
