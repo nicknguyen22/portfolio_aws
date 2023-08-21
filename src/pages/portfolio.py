@@ -9,14 +9,20 @@ dash.register_page(
 
 layout = dbc.Container([
 
+    # Header
     dbc.Container([
-            html.Div(className='slider-thumb1'),
-            html.Div(className='slider-thumb2'),
-            html.P('Portfolio',style={'color':'white','font-weight':'700', 'font-size':'60px',
-                                     },className='page-name'),
+        dbc.Container([
+            html.Div(className='slider-thumb1 px-0'),
+            html.Div(className='slider-thumb2 px-0'),
+            html.P('Portfolio',
+                style={'color':'white','font-weight':'700', 'font-size':'60px',},
+                className='page-name'),
+        ],style={'max-width':'1080px'},class_name='px-0'),
         ],class_name='bg2 px-0',fluid=True),
 
+    # All Accordions
     dbc.Container([
+
         dbc.Container([
             dbc.Accordion(
             [
@@ -48,7 +54,7 @@ layout = dbc.Container([
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'15px','padding-right':'15px'}),),
+                                                'padding-left':'10px','padding-right':'10px'}),),
 
                                 dbc.Col(
                                     dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -60,7 +66,7 @@ layout = dbc.Container([
                                         disabled=True,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'15px','padding-right':'15px'}),),
+                                                'padding-left':'10px','padding-right':'10px'}),),
                                     ]),
                                 ]),
 
@@ -93,7 +99,7 @@ layout = dbc.Container([
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'15px','padding-right':'15px'}),),
+                                                'padding-left':'10px','padding-right':'10px'}),),
 
                                 dbc.Col(
                                     dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -105,7 +111,7 @@ layout = dbc.Container([
                                         disabled=True,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'15px','padding-right':'15px'}),),
+                                                'padding-left':'10px','padding-right':'10px'}),),
                                     ]),
                                 ]),
 
@@ -119,6 +125,7 @@ layout = dbc.Container([
                 ),
             ],flush=True),
         ],style={'backgroundColor':'white'},fluid=False),
+
     ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
     fluid = True),
 
@@ -201,7 +208,7 @@ layout = dbc.Container([
                                             disabled=True,
                                             target="_blank",
                                             style = {'font-size':'13px','font-weight':'500',
-                                                    'padding-left':'15px','padding-right':'15px'}),),
+                                                    'padding-left':'10px','padding-right':'10px'}),),
 
                                     dbc.Col(
                                         dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -213,7 +220,7 @@ layout = dbc.Container([
                                             disabled=False,
                                             target="_blank",
                                             style = {'font-size':'13px','font-weight':'500',
-                                                    'padding-left':'15px','padding-right':'15px'}),),
+                                                    'padding-left':'10px','padding-right':'10px'}),),
                                         ]),
                                     ]),
 

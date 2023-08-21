@@ -8,13 +8,18 @@ dash.register_page(
     title='About Me',)
 
 layout = dbc.Container([
+    # Header
     dbc.Container([
-            html.Div(className='slider-thumb1'),
-            html.Div(className='slider-thumb2'),
-            html.P('About Me',style={'color':'white','font-weight':'700', 'font-size':'60px',
-                                     },className='page-name'),
-        ],class_name='bg1 px-0',fluid=True),
+        dbc.Container([
+            html.Div(className='slider-thumb1 px-0'),
+            html.Div(className='slider-thumb2 px-0'),
+            html.P('About Me',
+                style={'color':'white','font-weight':'700', 'font-size':'60px',},
+                className='page-name'),
+        ],style={'max-width':'1080px'},class_name='px-0'),
+    ],class_name='bg1 px-0',fluid=True),
 
+    # Personal Statement
     dbc.Container([
         dbc.Container([
             html.P('PERSONAL STATEMENT',style={'font-size':'26px','font-weight':'500',
@@ -41,6 +46,7 @@ layout = dbc.Container([
         ),
     ],fluid=True,),
 
+    # Working Experience 
     dbc.Container([
 
         dbc.Container([
@@ -280,10 +286,10 @@ layout = dbc.Container([
 
             ],className='timeline timeline-split'),
 
-            ],fluid=False,class_name='timelines',style={'padding-top':'50px',
-            'padding-bottom':'50px','max-width':'1080px'}),
-        ],style={'background-color':'#d1e4ff33'},fluid=True,
-    ),
+            ],fluid=False,class_name='timelines',style={'padding-top':'50px','padding-bottom':'50px',
+            'max-width':'1080px'}),
+
+        ],style={'background-color':'#d1e4ff33'},fluid=True),
 
 ],fluid=True,
 class_name='px-0',)

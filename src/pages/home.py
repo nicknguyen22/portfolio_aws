@@ -80,7 +80,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
 
                     dbc.Col(
                         dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -92,7 +92,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
                         ]),
                     ]),
 
@@ -126,7 +126,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
 
                     dbc.Col(
                         dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -138,7 +138,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
                         ]),
                     ]),
 
@@ -172,7 +172,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
 
                     dbc.Col(
                         dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
@@ -184,7 +184,7 @@ layout = dbc.Container([
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'15px','padding-right':'15px'}),),
+                                    'padding-left':'10px','padding-right':'10px'}),),
                         ])
                     ]),
                 ],style={'padding-bottom':'40px','padding-top':'20px'}),
@@ -319,7 +319,7 @@ layout = dbc.Container([
     dbc.Container([
         dbc.Container([
             html.P('SKILLS',style={'font-weight':'500','font-size':'26px','margin-bottom':'5px'}),
-            html.P('1 - Basic       2 - Novice      3 - Intermediate        4 - Advanced        5 - Expert',
+            html.P('1 : Basic     2 : Novice     3 : Intermediate     4 : Advanced     5 : Expert',
                    style={'white-space': 'pre','color':'gray','font-size':'13px'}),
             html.Br(),
 
