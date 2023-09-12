@@ -61,14 +61,13 @@ layout = dbc.Container([
                 ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
-                html.P('Deep Learning with TensorFlow LSTM and Electricity Spot Price',
+                html.P('Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
                     style = {'font-size':'15px','text-transform':'uppercase',
                         'font-weight':'700'}),
-                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
-                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
-                    cillum dolore eu fugiat nulla pariatur.',
+                html.P('This Python notebook demonstrates the use of Long Short-Term Memory (LSTM) networks, a type of \
+                    recurrent neural network (RNN), to predict electricity spot prices. The notebook provides \
+                    implementations using both TensorFlow and PyTorch, allowing users to compare and contrast the two \
+                    popular libraries for LSTM modeling and forecasting.',
                     style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
                 dbc.Row([
                     dbc.Col(
@@ -76,7 +75,7 @@ layout = dbc.Container([
                             outline=True, color='primary',
                             size = 'sm',
                             className="rounded-pill me-1",
-                            href='http://13.55.49.102:8050/',
+                            href='https://colab.research.google.com/drive/1Dl1f6UODlIjCP22Vv3YH-ZKVWUd-s3zd?usp=sharing',
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
@@ -88,7 +87,7 @@ layout = dbc.Container([
                             color='primary',
                             size = 'sm',
                             className="rounded-pill me-1",
-                            href='',
+                            href='https://github.com/nicknguyen22/Deep_learning/tree/134e5a79df346e054e5cd5c054bc97e526ce8ca5/spotprice_LSTM',
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
@@ -101,93 +100,96 @@ layout = dbc.Container([
         html.Hr(style={'color':'#adadad'}),
 
         dbc.Row([
-            dbc.Col([
-                html.Img(src='/assets/img/viz_1.jpg', style={'width':'100%',
-                        'max-width':'350px','height':'auto','border-radius':'5px'}),
-                ],style={'min-width':350,'max-width':350}),
+                        dbc.Col([
+                            html.Img(src='/assets/img/Looker_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
 
-            dbc.Col([
-                html.P('Electricity Generation & Carbon Emission 2002-2022 Visualisation',
-                    style = {'font-size':'15px','text-transform':'uppercase',
-                        'font-weight':'700'}),
-                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
-                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
-                    cillum dolore eu fugiat nulla pariatur.',
-                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
-                dbc.Row([
-                    dbc.Col(
-                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
-                            outline=True, color='primary',
-                            size = 'sm',
-                            className="rounded-pill me-1",
-                            href='',
-                            disabled=False,
-                            target="_blank",
-                            style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'10px','padding-right':'10px'}),),
+                        dbc.Col([
+                            html.P('Looker Studio - New Zealand COVID-19 2020 to 2023',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Explore the Looker Studio Dashboard, driven by data from the Ministry of Health NZ's \
+                                Covid-19 dataset. Dive into comprehensive information on cases, fatalities, and \
+                                hospitalisations, segmented by region, district health board, age group, ethnicity, and \
+                                more. This dashboard offers valuable insights into how the pandemic has affected NZ.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://lookerstudio.google.com/reporting/a67173ac-a815-4920-93ca-5aa685b9b3a7',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
 
-                    dbc.Col(
-                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
-                            outline=True, 
-                            color='primary',
-                            size = 'sm',
-                            className="rounded-pill me-1",
-                            href='',
-                            disabled=False,
-                            target="_blank",
-                            style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'10px','padding-right':'10px'}),),
-                        ]),
-                    ]),
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
 
-            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
 
-        html.Hr(style={'color':'#adadad'}),
+                    html.Hr(style={'color':'#adadad'}),
 
         dbc.Row([
-            dbc.Col([
-                html.Img(src='/assets/img/viz_2.jpg', style={'width':'100%',
-                        'max-width':'350px','height':'auto','border-radius':'5px'}),
-                ],style={'min-width':350,'max-width':350}),
+                        dbc.Col([
+                            html.Img(src='/assets/img/powerbi_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
 
-            dbc.Col([
-                html.P('Analysing Electricity Usage Patterns and Interacting with Data Tables',
-                    style = {'font-size':'15px','text-transform':'uppercase',
-                        'font-weight':'700'}),
-                html.P('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod \
-                    tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, \
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo \
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
-                    cillum dolore eu fugiat nulla pariatur.',
-                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
-                dbc.Row([
-                    dbc.Col(
-                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
-                            outline=True, color='primary',
-                            size = 'sm',
-                            className="rounded-pill me-1",
-                            href='',
-                            disabled=False,
-                            target="_blank",
-                            style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'10px','padding-right':'10px'}),),
+                        dbc.Col([
+                            html.P('Power BI & SQL - Rugby Statistic 1871 - 2023',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("The Power BI Dashboard, utilising a Rugby Kaggle dataset spanning from 1871 to 2023, offers \
+                                a detailed analysis of rugby team statistics. It ranks teams based on various performance \
+                                metrics, provides head-to-head competition details, and allows users to explore historical \
+                                trends and matchups.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://app.powerbi.com/view?r=eyJrIjoiZjVmMWMzZTYtNzI2Ni00N2FlLWFhZDMtY2VhNDI3NmVmZjQ0IiwidCI6ImZkZDU3MGNlLTg1ODAtNDM5Ny04MmMyLTQ3MTdmOTUzNzRkNSIsImMiOjEwfQ%3D%3D',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
 
-                    dbc.Col(
-                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
-                            outline=True, 
-                            color='primary',
-                            size = 'sm',
-                            className="rounded-pill me-1",
-                            href='',
-                            disabled=False,
-                            target="_blank",
-                            style = {'font-size':'13px','font-weight':'500',
-                                    'padding-left':'10px','padding-right':'10px'}),),
-                        ])
-                    ]),
-                ],style={'padding-bottom':'40px','padding-top':'20px'}),
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    # html.Hr(style={'color':'#adadad'}),
          
             dbc.Container([
                 dbc.Col(dbc.Button('MY PORTFOLIO', color='primary',href="/portfolio",

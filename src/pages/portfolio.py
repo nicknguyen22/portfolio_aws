@@ -30,10 +30,298 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
+                    # Looker Studio 
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/Looker_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Looker Studio - New Zealand COVID-19 2020 to 2023',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Explore the Looker Studio Dashboard, driven by data from the Ministry of Health NZ's \
+                                Covid-19 dataset. Dive into comprehensive information on cases, fatalities, and \
+                                hospitalisations, segmented by region, district health board, age group, ethnicity, and \
+                                more. This dashboard offers valuable insights into how the pandemic has affected NZ.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://lookerstudio.google.com/reporting/a67173ac-a815-4920-93ca-5aa685b9b3a7',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # Power BI 1
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/powerbi_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Power BI & SQL - Rugby Statistic 1871 - 2023',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("The Power BI Dashboard, utilising a Rugby Kaggle dataset spanning from 1871 to 2023, offers \
+                                a detailed analysis of rugby team statistics. It ranks teams based on various performance \
+                                metrics, provides head-to-head competition details, and allows users to explore historical \
+                                trends and matchups.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://app.powerbi.com/view?r=eyJrIjoiZjVmMWMzZTYtNzI2Ni00N2FlLWFhZDMtY2VhNDI3NmVmZjQ0IiwidCI6ImZkZDU3MGNlLTg1ODAtNDM5Ny04MmMyLTQ3MTdmOTUzNzRkNSIsImMiOjEwfQ%3D%3D',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+
+                    # Power BI 2
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/powerbi_thumb2.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Power BI & SQL - eCommerce YTD Sales & Sales Breakdown Analysis',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("This visualisation is a comprehensive data analytics project that leverages \
+                                mock-up data to provide valuable insights into the sales performance of an \
+                                eCommerce business over a two-year period. This analysis combines the power \
+                                of Microsoft Power BI and SQL to extract, transform, and visualize data for \
+                                decision-makers.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://app.powerbi.com/view?r=eyJrIjoiOGVhOTkwZjMtNmUwZC00Njg0LWI1NGYtYWRjNzJjMjcxZmRlIiwidCI6ImZkZDU3MGNlLTg1ODAtNDM5Ny04MmMyLTQ3MTdmOTUzNzRkNSIsImMiOjEwfQ%3D%3D',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # Python 1
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/pythonviz_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python & SQL - Electricity Generation & Carbon Emissions: 2002 - 2022 ',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Powering this Python dashboard is a dataset derived from SQL queries \
+                                applied to wrangled data on electricity generation, sourced from the \
+                                Electricity Authority. These visuals provide information on \
+                                electricity generation, carbon emissions, carbon intensity, and electricity \
+                                spot prices, all presented with detailed breakdown to trading periods.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://u9vrdlgso2.execute-api.ap-southeast-2.amazonaws.com/eleccarb',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/DashApps_AWSLambda_ver/tree/82a92bada6f972d764611f2f8f974c2529d13245/Electricity_carbon_emis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # Python 2
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/pythonviz_thumb2.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python - Electricity Consumption vs. Solar power generation ',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("This dashboard offers a comprehensive breakdown at the trading period \
+                                level, showcasing the consumption and generation of electricity by various \
+                                solar panel arrays. It also illustrates the potential cost and revenue \
+                                outcomes from exporting surplus electricity back to the grid. This real-world \
+                                case study is based on an anonymous ICP's data.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://2vxgeto5k7.execute-api.ap-southeast-2.amazonaws.com/ksviz',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/DashApps_AWSLambda_ver/tree/82a92bada6f972d764611f2f8f974c2529d13245/KS_viz',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # Python 3
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/pythonviz_thumb3.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python - Recognition and Customisation of Electricity Consumption Patterns ',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Using genuine anonymous household electricity usage logs, this visualization \
+                                detects consumption patterns. It applies these patterns to diverse electricity \
+                                plans, predicting yearly bills and associated carbon emissions. Adjusting the \
+                                pattern reveals potential cost savings under new usage patterns.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://nicknguyen.me/icpanalysis/',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/DashApps_AWSLambda_ver/tree/82a92bada6f972d764611f2f8f974c2529d13245/ICP_usage_analysis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # Tableau 1
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/tableau_thumb1.jpg', style={'width':'100%',
-                                    'max-width':'360px','height':'auto','border-radius':'5px'}),
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
@@ -76,10 +364,12 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    # Tableau 2
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/tableau_thumb2.jpg', style={'width':'100%',
-                                    'max-width':'360px','height':'auto','border-radius':'5px'}),
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
@@ -123,7 +413,7 @@ layout = dbc.Container([
 
 
                     ],
-                    title='Data Visualisation with Python, Tableau and PowerBI',
+                    title='Data Analysis & Visualisation with Python, Tableau, PowerBI and Looker Studio',
                 ),
             ],flush=True),
         ],style={'backgroundColor':'white'},fluid=False),
@@ -137,8 +427,7 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
-                        html.P("This is the content of the first section"),
-                        dbc.Button("Click here"),
+                        html.P("Under Construction - Coming Soon"),
                     ],
                     title='Machine Learning with R and Python',
                 ),
@@ -153,8 +442,7 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
-                        html.P("This is the content of the first section"),
-                        dbc.Button("Click here"),
+                        html.P("Under Construction - Coming Soon"),
                     ],
                     title='Distributed computing with Spark',
                 ),
@@ -169,8 +457,7 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
-                        html.P("This is the content of the first section"),
-                        dbc.Button("Click here"),
+                        html.P("Under Construction - Coming Soon"),
                     ],
                     title='Natural Language Processing (NLP) with Python',
                 ),
@@ -188,7 +475,8 @@ layout = dbc.Container([
                         dbc.Row([
                             dbc.Col([
                                 html.Img(src='/assets/img/game_thumb1.jpg', style={'width':'100%',
-                                        'max-width':'360px','height':'auto','border-radius':'5px'}),
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                                 ],style={'min-width':360,'max-width':360}),
 
                             dbc.Col([

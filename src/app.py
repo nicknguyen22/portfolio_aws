@@ -74,10 +74,13 @@ footer =  dbc.Container([
 
                 dbc.Col([
                     html.H4('About This Page',style={'padding-bottom':'5px'}),
-                    html.P('This website was coded in Python, Flask Framework, and CSS based on Dash\
-                        Plotly. It is hosted on a EC2 instance from Amazon Web Services (AWS). \
-                        Python portfolio web applications are deployed on AWS, while \
-                        R Shiny Apps are deployed on Microsoft Azure',
+                    html.P('The coding for this website utilized Python, the Flask \
+                        Framework, and CSS with a foundation in Dash Plotly. The \
+                        website is currently live on an EC2 instance through Amazon \
+                        Web Services (AWS). For Python portfolio web applications, \
+                        deployment occurs on AWS Lambda Serverless, complemented by \
+                        an AWS RDS database. In contrast, R Shiny Apps find their \
+                        deployment on Microsoft Azure',
                         style={'font-size':'16px', 'font-family':'Georgia'}),
                 ],style={'min-width':350,}),
 
