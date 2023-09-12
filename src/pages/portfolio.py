@@ -292,7 +292,7 @@ layout = dbc.Container([
                                         outline=True, color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://nicknguyen.me/icpanalysis/',
+                                        href='http://13.55.49.102:8050/icpanalysis/',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
