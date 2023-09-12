@@ -80,7 +80,7 @@ layout = dbc.Container([
                     # Power BI 1
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/powerbi_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/Powerbi_thumb1.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -128,7 +128,7 @@ layout = dbc.Container([
                     # Power BI 2
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/powerbi_thumb2.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/Powerbi_thumb2.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
