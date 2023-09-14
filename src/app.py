@@ -66,7 +66,7 @@ footer =  dbc.Container([
                         html.A(DashIconify(icon="mdi:github", width=30),className="logoicon px-2",
                             href='https://github.com/nicknguyen22', target='_blank'),
                         
-                        html.A(DashIconify(icon="mdi:linkedin", width=30),className="logoicon px-2",
+                        html.A(html.Img(src='/assets/seek_logo.png',style={'width':'24px'}),className="px-2",
                             href='https://www.seek.co.nz/profile/hieu-nguyen-VbL4nl8v3p', 
                             target='_blank'),
 

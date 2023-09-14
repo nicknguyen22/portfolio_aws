@@ -56,8 +56,9 @@ layout = dbc.Container([
             
         dbc.Row([
             dbc.Col([
-                html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%',
-                        'max-width':'350px','height':'auto','border-radius':'5px'}),
+                html.Img(src='/assets/img/pytorch_keras.jpg', style={'width':'100%',
+                        'max-width':'350px','height':'auto','border-radius':'5px'},
+                        className='shadow-sm'),
                 ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
@@ -101,7 +102,7 @@ layout = dbc.Container([
 
         dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/Looker_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/looker.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -143,11 +144,11 @@ layout = dbc.Container([
 
                             ],style={'padding-bottom':'20px','padding-top':'20px'}),
 
-                    html.Hr(style={'color':'#adadad'}),
+            html.Hr(style={'color':'#adadad'}),
 
         dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/Powerbi_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/powerbi.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),

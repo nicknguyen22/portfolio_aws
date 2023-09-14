@@ -36,7 +36,7 @@ layout = dbc.Container([
                     # Looker Studio 
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/Looker_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/looker.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -83,7 +83,7 @@ layout = dbc.Container([
                     # Power BI 1
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/Powerbi_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/powerbi.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -131,7 +131,7 @@ layout = dbc.Container([
                     # Power BI 2
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/Powerbi_thumb2.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/powerbi.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -179,7 +179,7 @@ layout = dbc.Container([
                     # Python 1
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/pythonviz_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/py_plotly.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -227,7 +227,7 @@ layout = dbc.Container([
                     # Python 2
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/pythonviz_thumb2.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/py_plotly.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -275,7 +275,7 @@ layout = dbc.Container([
                     # Python 3
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/pythonviz_thumb3.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/py_plotly.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -322,7 +322,7 @@ layout = dbc.Container([
                     # Tableau 1
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/tableau_thumb1.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/tableau.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -370,7 +370,7 @@ layout = dbc.Container([
                     # Tableau 2
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/tableau_thumb2.jpg', style={'width':'100%',
+                            html.Img(src='/assets/img/tableau.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                             ],style={'min-width':360,'max-width':360}),
@@ -433,8 +433,9 @@ layout = dbc.Container([
 
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            html.Img(src='/assets/img/pytorch_keras.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                             ],style={'min-width':350,'max-width':350}),
 
                         dbc.Col([
@@ -478,8 +479,9 @@ layout = dbc.Container([
 
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/ml_thumb1.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            html.Img(src='/assets/img/colab_jup.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                             ],style={'min-width':350,'max-width':350}),
 
                         dbc.Col([
@@ -523,8 +525,9 @@ layout = dbc.Container([
 
                     dbc.Row([
                         dbc.Col([
-                            html.Img(src='/assets/img/ml_thumb1.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
                             ],style={'min-width':350,'max-width':350}),
 
                         dbc.Col([
@@ -614,7 +617,7 @@ layout = dbc.Container([
                     [
                         dbc.Row([
                             dbc.Col([
-                                html.Img(src='/assets/img/game_thumb1.jpg', style={'width':'100%',
+                                html.Img(src='/assets/img/py_pygame.jpg', style={'width':'100%',
                                     'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
                                 ],style={'min-width':360,'max-width':360}),
