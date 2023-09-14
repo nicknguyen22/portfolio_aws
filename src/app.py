@@ -2,6 +2,8 @@ from dash import Dash, dcc, html, Input, Output, callback, ctx
 import dash
 import dash_bootstrap_components as dbc
 from dash_iconify import DashIconify
+import flask
+import os
 
 LOGO = '/assets/logo.jpg'
 
@@ -100,11 +102,11 @@ footer =  dbc.Container([
     )
 
 # # Define components
-app = dash.Dash(__name__, 
+app = dash.Dash(__name__,
                 use_pages=True, 
                 external_stylesheets=[
-                dbc.themes.MATERIA,
-                dbc.icons.FONT_AWESOME,
+                    dbc.themes.MATERIA,
+                    dbc.icons.FONT_AWESOME,
                 ]
 )
 app.title = 'Nick Nguyen'
@@ -133,6 +135,10 @@ def mailto_button(btn1):
     if 'mailto' == ctx.triggered_id:
         return 'mailto:hieu@nicknguyen.me'
 
+@app.server.route('/static/<path:path>')
+def static_file(path):
+    static_folder = os.path.join(os.getcwd(), 'static')
+    return send_from_directory(static_folder, path)
 
 if __name__ == "__main__":
     app.run_server(host='0.0.0.0', port=80, debug=False)

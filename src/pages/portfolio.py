@@ -1,6 +1,9 @@
 from dash import Dash, dcc, html, Input, Output, callback
 import dash
 import dash_bootstrap_components as dbc
+# from pathlib import Path
+# import flask
+# import os
 
 dash.register_page(
     __name__,
@@ -427,12 +430,149 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
-                        html.P("Under Construction - Coming Soon"),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/spt_prc.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            ],style={'min-width':350,'max-width':350}),
+
+                        dbc.Col([
+                            html.P('Python - Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P('This Python notebook demonstrates the use of Long Short-Term Memory (LSTM) networks, a type of \
+                                recurrent neural network (RNN), to predict electricity spot prices. The notebook provides \
+                                implementations using both TensorFlow and PyTorch, allowing users to compare and contrast the two \
+                                popular libraries for LSTM modeling and forecasting.',
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/1Dl1f6UODlIjCP22Vv3YH-ZKVWUd-s3zd?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/a43839000bb86188d3d2820e28dee52446378b5f/spotprice_LSTM',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/ml_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            ],style={'min-width':350,'max-width':350}),
+
+                        dbc.Col([
+                            html.P('Python - Time series data pattern recognitions',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P('This notebook utilised an unsupervised machine learning technique known as time \
+                                series k-means clustering to identify underlying patterns within the time series data \
+                                representing Carbon Intensity. The dataset encompassed Carbon Intensity values for each \
+                                30-minute Trading Period, spanning from 2018 to 2022 in NZ',
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/1GGWpRxXxfUlCp0vksWZ-mSLfEicb0RzM?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/a43839000bb86188d3d2820e28dee52446378b5f/Timeseries_pattern_recognition',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/ml_thumb1.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'}),
+                            ],style={'min-width':350,'max-width':350}),
+
+                        dbc.Col([
+                            html.P('R - Banknotes classification with LG,LDA and QDA ',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P('This notebook utilised an unsupervised machine learning technique known as time \
+                                series k-means clustering to identify underlying patterns within the time series data \
+                                representing Carbon Intensity. The dataset encompassed Carbon Intensity values for each \
+                                30-minute Trading Period, spanning from 2018 to 2022 in NZ',
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= 'https://nicknguyen.me/static/Banknote_classification.html',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/3007bf548b173bf85ba9856dffc6799cec6273e2/Banknote_classification',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+
                     ],
                     title='Machine Learning with R and Python',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
+
     ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
     fluid = True),
 

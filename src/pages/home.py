@@ -61,7 +61,7 @@ layout = dbc.Container([
                 ],style={'min-width':350,'max-width':350}),
 
             dbc.Col([
-                html.P('Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
+                html.P('Python - Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
                     style = {'font-size':'15px','text-transform':'uppercase',
                         'font-weight':'700'}),
                 html.P('This Python notebook demonstrates the use of Long Short-Term Memory (LSTM) networks, a type of \
@@ -87,7 +87,7 @@ layout = dbc.Container([
                             color='primary',
                             size = 'sm',
                             className="rounded-pill me-1",
-                            href='https://github.com/nicknguyen22/Deep_learning/tree/134e5a79df346e054e5cd5c054bc97e526ce8ca5/spotprice_LSTM',
+                            href='https://github.com/nicknguyen22/Machine_learning/tree/a43839000bb86188d3d2820e28dee52446378b5f/spotprice_LSTM',
                             disabled=False,
                             target="_blank",
                             style = {'font-size':'13px','font-weight':'500',
