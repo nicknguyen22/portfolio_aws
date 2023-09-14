@@ -531,13 +531,13 @@ layout = dbc.Container([
                             ],style={'min-width':350,'max-width':350}),
 
                         dbc.Col([
-                            html.P('R - Banknotes classification with LG,LDA and QDA ',
+                            html.P('R - Banknotes classification with Logistic Regression, LDA and QDA',
                                 style = {'font-size':'15px','text-transform':'uppercase',
                                     'font-weight':'700'}),
-                            html.P('This notebook utilised an unsupervised machine learning technique known as time \
-                                series k-means clustering to identify underlying patterns within the time series data \
-                                representing Carbon Intensity. The dataset encompassed Carbon Intensity values for each \
-                                30-minute Trading Period, spanning from 2018 to 2022 in NZ',
+                            html.P("This R notebook compares the results of multiple regression algorithms for the \
+                                detection of forged banknotes. We'll be evaluating the performance of logistic \
+                                regression analysis, linear discriminant analysis (LDA), and quadratic discriminant \
+                                analysis (QDA) to determine their effectiveness in distinguishing genuine banknotes from forged ones.",
                                 style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
                             dbc.Row([
                                 dbc.Col(
@@ -569,6 +569,97 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':350,'max-width':350}),
+
+                        dbc.Col([
+                            html.P('R - Backward, Stepwise, Ridge and LASSO Regression Comparision ',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P('This R notebook focused on assessing the performance of four distinct regression \
+                                techniques - Backward Regression, Stepwise Regression, LASSO Regression, and Ridge \
+                                Regression. Our analysis centers around the Residential Building Dataset, aiming to \
+                                compare the efficacy of these methods within the context of residential building data.',
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= 'https://nicknguyen.me/static/Backward_stepwise_LASSO_Ridge.html',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/c027c3f49516735389504de108f663723024210d/Backward_stepwise_lasso_ridge',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
+                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':350,'max-width':350}),
+
+                        dbc.Col([
+                            html.P("R - Parkinson's disease UPDRS analysis with LASSO Regression",
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("This R notebook, where we delve into the analysis of Parkinson's disease UPDRS \
+                                (Unified Parkinson's Disease Rating Scale) using LASSO Regression. In this exploration, \
+                                we aim to uncover the relative importance of features within the fitted model, shedding \
+                                light on the key factors contributing to the UPDRS scores in Parkinson's disease patients.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= 'https://nicknguyen.me/static/Parkinsons_UPDRS_analysis_LASSORegession.html',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/c027c3f49516735389504de108f663723024210d/Parkinson_LASSO_analysis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
 
                     ],
                     title='Machine Learning with R and Python',
