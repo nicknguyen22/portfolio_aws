@@ -418,9 +418,224 @@ layout = dbc.Container([
                     ],
                     title='Data Analysis & Visualisation with Python, Tableau, PowerBI and Looker Studio',
                 ),
-            ],flush=True),
+            ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
 
+    ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
+    fluid = True),
+
+    dbc.Container([
+
+        dbc.Container([
+            dbc.Accordion(
+            [
+                dbc.AccordionItem(
+                    [
+                    # Data project
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/r_julia.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('R, Julia and SQL  - New Zealand Crash Analysis System (CAS) Data wrangling',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("This project focuses on handling and transforming data from multiple \
+                                sources. Data sources involved Crash Analysis System (CAS) data from NZ, \
+                                regional population statistics, and Vehicle Kilometer Travelled (VKT). \
+                                This project is utilising a combination of R & Julia for web scraping, \
+                                ArcGIS API requests, and SQL database creation .",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Data-wrangling.git',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    ],
+                    title='Data Wrangling',
+                ),
+            ],flush=True,start_collapsed=True),
+        ],style={'backgroundColor':'white'},fluid=False),
+
+    ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
+    fluid = True),
+
+    dbc.Container([
+        dbc.Container([
+            dbc.Accordion(
+            [
+                dbc.AccordionItem(
+                    [
+                    dbc.Row([
+                            dbc.Col([
+                                html.Img(src='/assets/img/spark_py.jpg', style={'width':'100%',
+                                        'max-width':'360px','height':'auto','border-radius':'5px'},
+                                        className='shadow-sm'),
+                                ],style={'min-width':360,'max-width':360}),
+
+                            dbc.Col([
+                                html.P("Spark & SQL - Global Historical Climate Network Data Analysis using Spark",
+                                    style = {'font-size':'15px','text-transform':'uppercase',
+                                        'font-weight':'700'}),
+                                html.P("Analysing Global Historical Climate Network (GHCN) data using the power of Spark. \
+                                    In this notebook, we'll harness the capabilities of distributed computing in Spark, \
+                                    along with HDFS command-line tools, PySpark, Spark DataFrames, and Spark SQL, all \
+                                    within the familiar environment of Jupyter Notebook. ",
+                                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                                dbc.Row([
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                            outline=True, color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href= 'https://nicknguyen.me/static/GHCN_Spark.html',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                            outline=True, 
+                                            color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href='https://github.com/nicknguyen22/Spark/tree/8cf26e4e0c4291e9090ce4b417b2374b6b68dc1f/GHCN',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+                                        ]),
+                                    ]),
+
+                                ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                            dbc.Col([
+                                html.Img(src='/assets/img/spark_py.jpg', style={'width':'100%',
+                                        'max-width':'360px','height':'auto','border-radius':'5px'},
+                                        className='shadow-sm'),
+                                ],style={'min-width':360,'max-width':360}),
+
+                            dbc.Col([
+                                html.P("Spark - Audio Similarity: Spark Machine Learning with Million Songs Dataset",
+                                    style = {'font-size':'15px','text-transform':'uppercase',
+                                        'font-weight':'700'}),
+                                html.P("This notebook uses Spark Machine Learning Library, on Spark Distributed \
+                                    Computing Platform to predict song genres from audio data. It applies Ridge \
+                                    Regression, Random Forest, and Gradient Boosted Tree algorithms on large-scale \
+                                    data for efficient binary classification and multiclass classification.",
+                                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                                dbc.Row([
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                            outline=True, color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href= 'https://nicknguyen.me/static/MSD_Audio_similarity.html',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                            outline=True, 
+                                            color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href='https://github.com/nicknguyen22/Spark/tree/2703786a3a173af277a4168bc4f9196cbce451db/MSD_Audio_similarity',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+                                        ]),
+                                    ]),
+
+                                ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                            dbc.Col([
+                                html.Img(src='/assets/img/spark_py.jpg', style={'width':'100%',
+                                        'max-width':'360px','height':'auto','border-radius':'5px'},
+                                        className='shadow-sm'),
+                                ],style={'min-width':360,'max-width':360}),
+
+                            dbc.Col([
+                                html.P("Spark - Song Recommendations by Collaborative Filtering (ALS)",
+                                    style = {'font-size':'15px','text-transform':'uppercase',
+                                        'font-weight':'700'}),
+                                html.P("This Spark notebook is dedicated to creating a song recommendation system \
+                                    through collaborative filtering. Leveraging the power of the Spark.ml library, it \
+                                    employs an implicit matrix factorization model using Alternating Least Squares (ALS) \
+                                    to provide personalized song recommendations.",
+                                    style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                                dbc.Row([
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                            outline=True, color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href= 'https://nicknguyen.me/static/MSD_Song_recommendations.html',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+
+                                    dbc.Col(
+                                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                            outline=True, 
+                                            color='primary',
+                                            size = 'sm',
+                                            className="rounded-pill me-1",
+                                            href='https://github.com/nicknguyen22/Spark/tree/cbec2395f8d470961678b0a73b9f61fde248481f/MSD_Song_recommendations',
+                                            disabled=False,
+                                            target="_blank",
+                                            style = {'font-size':'13px','font-weight':'500',
+                                                    'padding-left':'10px','padding-right':'10px'}),),
+                                        ]),
+                                    ]),
+
+                                ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+
+                    ],
+                    title='Distributed computing with Spark',
+                ),
+            ],flush=True,start_collapsed=True),
+        ],style={'backgroundColor':'white'},fluid=False),
     ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
     fluid = True),
 
@@ -434,9 +649,9 @@ layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/pytorch_keras.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
-                            ],style={'min-width':350,'max-width':350}),
+                            ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
                             html.P('Python - Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
@@ -480,9 +695,9 @@ layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/colab_jup.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
-                            ],style={'min-width':350,'max-width':350}),
+                            ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
                             html.P('Python - Time series data pattern recognitions',
@@ -526,9 +741,9 @@ layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
-                            ],style={'min-width':350,'max-width':350}),
+                            ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
                             html.P('R - Banknotes classification with Logistic Regression, LDA and QDA',
@@ -572,9 +787,9 @@ layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
-                            ],style={'min-width':350,'max-width':350}),
+                            ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
                             html.P('R - Backward, Stepwise, Ridge and LASSO Regression Comparision ',
@@ -618,9 +833,9 @@ layout = dbc.Container([
                     dbc.Row([
                         dbc.Col([
                             html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
-                                    'max-width':'350px','height':'auto','border-radius':'5px'},
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
                                     className='shadow-sm'),
-                            ],style={'min-width':350,'max-width':350}),
+                            ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
                             html.P("R - Parkinson's disease UPDRS analysis with LASSO Regression",
@@ -661,27 +876,59 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/rlogo.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P("R - Support Vector Machine (SVM) Algorithms via the Caret Pipeline",
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("We harness the power of Support Vector Machine (SVM) algorithms within the Caret \
+                                Pipeline to tackle the critical task of classifying breast cancer patients. In this \
+                                notebook, we'll explore how SVM, coupled with efficient data preprocessing and model \
+                                evaluation through the Caret framework, can aid in distinguishing between different \
+                                cancer results.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= 'https://nicknguyen.me/static/SVM_caret.html',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/ced022dedc8453d14866855d1c60cebec51307cf/SVM_Caret_pipeline',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
                     ],
                     title='Machine Learning with R and Python',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
 
-    ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
-    fluid = True),
-
-    dbc.Container([
-        dbc.Container([
-            dbc.Accordion(
-            [
-                dbc.AccordionItem(
-                    [
-                        html.P("Under Construction - Coming Soon"),
-                    ],
-                    title='Distributed computing with Spark',
-                ),
-            ],flush=True,start_collapsed=True),
-        ],style={'backgroundColor':'white'},fluid=False),
     ],style={'padding-top':'20px','padding-bottom':'20px','max-width':'1080px',},
     fluid = True),
 

@@ -57,9 +57,9 @@ layout = dbc.Container([
         dbc.Row([
             dbc.Col([
                 html.Img(src='/assets/img/pytorch_keras.jpg', style={'width':'100%',
-                        'max-width':'350px','height':'auto','border-radius':'5px'},
+                        'max-width':'360px','height':'auto','border-radius':'5px'},
                         className='shadow-sm'),
-                ],style={'min-width':350,'max-width':350}),
+                ],style={'min-width':360,'max-width':360}),
 
             dbc.Col([
                 html.P('Python - Electricity Spot Price Prediction using TensorFlow & Pytorch LSTM',
