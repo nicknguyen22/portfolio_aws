@@ -33,8 +33,8 @@ navbar = dbc.NavbarSimple(
     brand= dbc.Container(
                 dbc.Row(
                     [
-                        dbc.Col(html.Img(src=LOGO, height="30px",style={'justify':'end'})),
-                        dbc.Col(html.H4('NICK NGUYEN', className="ms-2", 
+                        dbc.Col(html.Img(src=LOGO, height="32px",style={'padding-bottom':'9px'})),
+                        dbc.Col(html.H4('NICK NGUYEN', className="ms-3", 
                                         style={'font-family':'Roboto',
                                                'font-weight':'700',
                                                'color' :'#444444'})),

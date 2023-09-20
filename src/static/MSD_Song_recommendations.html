@@ -7515,202 +7515,6 @@ songs that are similar to the user based on cosine similarity.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Function to import pyspark and to define start_spark() and stop_spark()</span>
-
-<span class="kn">import</span> <span class="nn">findspark</span>
-
-<span class="n">findspark</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-
-<span class="kn">import</span> <span class="nn">getpass</span>
-<span class="kn">import</span> <span class="nn">pandas</span>
-<span class="kn">import</span> <span class="nn">pyspark</span>
-<span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">pyspark</span> <span class="kn">import</span> <span class="n">SparkContext</span>
-<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
-
-
-<span class="c1"># Functions used below</span>
-
-<span class="k">def</span> <span class="nf">username</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Get username with any domain information removed.</span>
-<span class="sd">    """</span>
-
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">'@.*'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">())</span>
-
-
-<span class="k">def</span> <span class="nf">dict_to_html</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Convert a Python dictionary into a two column table for display.</span>
-<span class="sd">    """</span>
-
-    <span class="n">html</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">html</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;table width="100%" style="width:100%; font-family: monospace;"&gt;'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">html</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;tr&gt;&lt;td style="text-align:left;"&gt;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">&lt;/td&gt;&lt;td&gt;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&lt;/td&gt;&lt;/tr&gt;'</span><span class="p">)</span>
-    <span class="n">html</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;/table&gt;'</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">show_as_html</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Leverage existing pandas jupyter integration to show a spark dataframe as html.</span>
-<span class="sd">    </span>
-<span class="sd">    Args:</span>
-<span class="sd">        n (int): number of rows to show (default: 20)</span>
-<span class="sd">    """</span>
-
-    <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">())</span>
-
-    
-<span class="k">def</span> <span class="nf">display_spark</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Display the status of the active Spark session if one is currently running.</span>
-<span class="sd">    """</span>
-    
-    <span class="k">if</span> <span class="s1">'spark'</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">'sc'</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-
-        <span class="n">name</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">getConf</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"spark.app.name"</span><span class="p">)</span>
-        
-        <span class="n">html</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;&lt;b&gt;Spark&lt;/b&gt;&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;The spark session is &lt;b&gt;&lt;span style="color:green"&gt;active&lt;/span&gt;&lt;/b&gt;, look for &lt;code&gt;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&lt;/code&gt; under the running applications section in the Spark UI.&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;ul&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="http://mathmadslinux2p.canterbury.ac.nz:8080/" target="_blank"&gt;Spark UI&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">sc</span><span class="o">.</span><span class="n">uiWebUrl</span><span class="si">}</span><span class="s1">" target="_blank"&gt;Spark Application UI&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;&lt;b&gt;Config&lt;/b&gt;&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="n">dict_to_html</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">getConf</span><span class="p">()</span><span class="o">.</span><span class="n">getAll</span><span class="p">())),</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;ul&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;li&gt;The spark session &lt;code&gt;spark&lt;/code&gt; and spark context &lt;code&gt;sc&lt;/code&gt; global variables have been defined by &lt;code&gt;start_spark()&lt;/code&gt;.&lt;/li&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;li&gt;Please run &lt;code&gt;stop_spark()&lt;/code&gt; before closing the notebook or restarting the kernel or kill &lt;code&gt;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&lt;/code&gt; by hand using the link in the Spark UI.&lt;/li&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="p">]</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">)))</span>
-        
-    <span class="k">else</span><span class="p">:</span>
-        
-        <span class="n">html</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;&lt;b&gt;Spark&lt;/b&gt;&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;p&gt;The spark session is &lt;b&gt;&lt;span style="color:red"&gt;stopped&lt;/span&gt;&lt;/b&gt;, confirm that &lt;code&gt;</span><span class="si">{</span><span class="n">username</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">" (jupyter)"</span><span class="si">}</span><span class="s1">&lt;/code&gt; is under the completed applications section in the Spark UI.&lt;/p&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;ul&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="http://mathmadslinux2p.canterbury.ac.nz:8080/" target="_blank"&gt;Spark UI&lt;/a&gt;&lt;/li&gt;'</span><span class="p">,</span>
-            <span class="sa">f</span><span class="s1">'&lt;/ul&gt;'</span><span class="p">,</span>
-        <span class="p">]</span>
-        <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">)))</span>
-
-
-<span class="c1"># Functions to start and stop spark</span>
-
-<span class="k">def</span> <span class="nf">start_spark</span><span class="p">(</span><span class="n">executor_instances</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">executor_cores</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">worker_memory</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">master_memory</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Start a new Spark session and define globals for SparkSession (spark) and SparkContext (sc).</span>
-<span class="sd">    </span>
-<span class="sd">    Args:</span>
-<span class="sd">        executor_instances (int): number of executors (default: 2)</span>
-<span class="sd">        executor_cores (int): number of cores per executor (default: 1)</span>
-<span class="sd">        worker_memory (float): worker memory (default: 1)</span>
-<span class="sd">        master_memory (float): master memory (default: 1)</span>
-<span class="sd">    """</span>
-
-    <span class="k">global</span> <span class="n">spark</span>
-    <span class="k">global</span> <span class="n">sc</span>
-
-    <span class="n">user</span> <span class="o">=</span> <span class="n">username</span><span class="p">()</span>
-    
-    <span class="n">cores</span> <span class="o">=</span> <span class="n">executor_instances</span> <span class="o">*</span> <span class="n">executor_cores</span>
-    <span class="n">partitions</span> <span class="o">=</span> <span class="n">cores</span> <span class="o">*</span> <span class="mi">4</span>
-    <span class="n">port</span> <span class="o">=</span> <span class="mi">4000</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
-
-    <span class="n">spark</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span>
-        <span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="s2">"spark://masternode2:7077"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.driver.extraJavaOptions"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"-Dderby.system.home=/tmp/</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">/spark/"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.dynamicAllocation.enabled"</span><span class="p">,</span> <span class="s2">"false"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.executor.instances"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">executor_instances</span><span class="p">))</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.executor.cores"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">executor_cores</span><span class="p">))</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.cores.max"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cores</span><span class="p">))</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.executor.memory"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">worker_memory</span><span class="si">}</span><span class="s2">g"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.driver.memory"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">master_memory</span><span class="si">}</span><span class="s2">g"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.driver.maxResultSize"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.sql.shuffle.partitions"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">partitions</span><span class="p">))</span>
-        <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">"spark.ui.port"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">port</span><span class="p">))</span>
-        <span class="o">.</span><span class="n">appName</span><span class="p">(</span><span class="n">user</span> <span class="o">+</span> <span class="s2">" (jupyter)"</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
-    <span class="p">)</span>
-    <span class="n">sc</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">getOrCreate</span><span class="p">()</span>
-    
-    <span class="n">display_spark</span><span class="p">()</span>
-
-    
-<span class="k">def</span> <span class="nf">stop_spark</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">"""Stop the active Spark session and delete globals for SparkSession (spark) and SparkContext (sc).</span>
-<span class="sd">    """</span>
-
-    <span class="k">global</span> <span class="n">spark</span>
-    <span class="k">global</span> <span class="n">sc</span>
-
-    <span class="k">if</span> <span class="s1">'spark'</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">'sc'</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-
-        <span class="n">spark</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-
-        <span class="k">del</span> <span class="n">spark</span>
-        <span class="k">del</span> <span class="n">sc</span>
-
-    <span class="n">display_spark</span><span class="p">()</span>
-
-
-<span class="c1"># Make css changes to improve spark output readability</span>
-
-<span class="n">html</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
-    <span class="s1">'pre { white-space: pre !important; }'</span><span class="p">,</span>
-    <span class="s1">'table.dataframe td { white-space: nowrap !important; }'</span><span class="p">,</span>
-    <span class="s1">'table.dataframe thead th:first-child, table.dataframe tbody th { display: none; }'</span><span class="p">,</span>
-    <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
-<span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<style>pre { white-space: pre !important; }table.dataframe td { white-space: nowrap !important; }table.dataframe thead th:first-child, table.dataframe tbody th { display: none; }</style>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Start Spark</span>
-<span class="n">start_spark</span><span class="p">(</span><span class="n">executor_instances</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">executor_cores</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">worker_memory</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">master_memory</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Import </span>
 <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">Row</span><span class="p">,</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">Window</span><span class="p">,</span> <span class="n">functions</span> <span class="k">as</span> <span class="n">F</span>
 <span class="kn">from</span> <span class="nn">pyspark.sql.functions</span> <span class="kn">import</span> <span class="n">regexp_replace</span><span class="p">,</span> <span class="nb">sum</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row_number</span><span class="p">,</span> <span class="n">rand</span><span class="p">,</span> <span class="n">udf</span>
@@ -7872,6 +7676,18 @@ songs that are similar to the user based on cosine similarity.</p>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">''</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'auroc:     </span><span class="si">{</span><span class="n">auroc</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">''</span><span class="p">)</span>
+
+
+<span class="c1"># Make css changes to improve spark output readability</span>
+
+<span class="n">html</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'&lt;style&gt;'</span><span class="p">,</span>
+    <span class="s1">'pre { white-space: pre !important; }'</span><span class="p">,</span>
+    <span class="s1">'table.dataframe td { white-space: nowrap !important; }'</span><span class="p">,</span>
+    <span class="s1">'table.dataframe thead th:first-child, table.dataframe tbody th { display: none; }'</span><span class="p">,</span>
+    <span class="s1">'&lt;/style&gt;'</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -10339,22 +10155,6 @@ MAP @ K:       0.01750
 NDCG @ K:      0.04537
 
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Run this cell before closing the notebook or kill your spark application by hand using the link in the Spark UI</span>
-
-<span class="n">stop_spark</span><span class="p">()</span>
-</pre></div>
 </div>
 </div>
 </div>

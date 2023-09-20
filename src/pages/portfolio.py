@@ -546,7 +546,7 @@ layout = dbc.Container([
                                 ],style={'min-width':360,'max-width':360}),
 
                             dbc.Col([
-                                html.P("Spark - Audio Similarity: Spark Machine Learning with Million Songs Dataset",
+                                html.P("Spark - Audio Similarity: Binary & Multiclass classification",
                                     style = {'font-size':'15px','text-transform':'uppercase',
                                         'font-weight':'700'}),
                                 html.P("This notebook uses Spark Machine Learning Library, on Spark Distributed \
@@ -727,6 +727,52 @@ layout = dbc.Container([
                                         size = 'sm',
                                         className="rounded-pill me-1",
                                         href='https://github.com/nicknguyen22/Machine_learning/tree/a43839000bb86188d3d2820e28dee52446378b5f/Timeseries_pattern_recognition',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/py_keras_optuna.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python - Classifying Fashion with a 4-Layer Convolutional Neural Network',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P('This notebook utilizes a Convolutional Neural Network (CNN) classifier constructed \
+                                using the Keras deep learning library. The CNN architecture comprises four convolutional \
+                                layers and has been fine-tuned using Optuna hyperparameter optimisation and augmented with \
+                                data augmentation techniques. The results are visualised using TensorBoard.',
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/11HTjho6MbseW0-7kIATSU0F8D13uBh7-?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/a1d3640b064ac5a2d32b371294cde12c60d12166/Classification_CNN4Layers',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -938,7 +984,99 @@ layout = dbc.Container([
             [
                 dbc.AccordionItem(
                     [
-                        html.P("Under Construction - Coming Soon"),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/py_spacy.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python & Spacy - Text Information Extraction',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("In the modern data-driven landscape, leveraging the capabilities of natural language \
+                                processing (NLP) is paramount for extracting valuable insights from unstructured textual \
+                                data. This Python notebook is dedicated to the core mission of delving into and comprehending \
+                                how the Spacy library can proficiently carry out information extraction.  ",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/16dRCG5zV0tdZxpfGdSwgOfj11AFvcRnq?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/NLP/tree/953ab103d54bbd117e5aaae7fb8e841b843a6952/Information_extraction',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/py_gensim.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python & Spacy - Text Information Extraction',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("In this Python notebook, we embark on an exciting journey through TED.com transcripts, \
+                                applying advanced topic modeling techniques. Leveraging the power of the Gensim library and \
+                                the Mallet library, we explore the rich content of TED talks to uncover hidden themes and \
+                                insights.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/1DvNuyndrxJqpMjpmxrk3Zd1Puxi5rv89?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/NLP/tree/d115e4edb3ca2092b5cb7e8f59e1d832cf4a6dbc/Topic_modelling',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
                     ],
                     title='Natural Language Processing (NLP) with Python',
                 ),
