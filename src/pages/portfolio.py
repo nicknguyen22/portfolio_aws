@@ -749,7 +749,7 @@ layout = dbc.Container([
                             html.P('Python - Classifying Fashion with a 4-Layer Convolutional Neural Network',
                                 style = {'font-size':'15px','text-transform':'uppercase',
                                     'font-weight':'700'}),
-                            html.P('This notebook utilizes a Convolutional Neural Network (CNN) classifier constructed \
+                            html.P('This notebook utilises a Convolutional Neural Network (CNN) classifier constructed \
                                 using the Keras deep learning library. The CNN architecture comprises four convolutional \
                                 layers and has been fine-tuned using Optuna hyperparameter optimisation and augmented with \
                                 data augmentation techniques. The results are visualised using TensorBoard.',
@@ -772,7 +772,7 @@ layout = dbc.Container([
                                         color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/Machine_learning/tree/a1d3640b064ac5a2d32b371294cde12c60d12166/Classification_CNN4Layers',
+                                        href='https://github.com/nicknguyen22/Machine_learning/tree/bf90508dddf6fbaf53469256bc04503ee0390941/Classification_CNN4Layers',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1019,7 +1019,7 @@ layout = dbc.Container([
                                         color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/NLP/tree/953ab103d54bbd117e5aaae7fb8e841b843a6952/Information_extraction',
+                                        href='https://github.com/nicknguyen22/NLP/tree/02512e3efa28fa3186c7c648e637e9c7aa2e80e0/Information_extraction',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1039,7 +1039,7 @@ layout = dbc.Container([
                             ],style={'min-width':360,'max-width':360}),
 
                         dbc.Col([
-                            html.P('Python & Spacy - Text Information Extraction',
+                            html.P('Python & Gensim - Topic modelling with gensim and mallet',
                                 style = {'font-size':'15px','text-transform':'uppercase',
                                     'font-weight':'700'}),
                             html.P("In this Python notebook, we embark on an exciting journey through TED.com transcripts, \
@@ -1053,7 +1053,7 @@ layout = dbc.Container([
                                         outline=True, color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://colab.research.google.com/drive/1DvNuyndrxJqpMjpmxrk3Zd1Puxi5rv89?usp=sharing',
+                                        href='https://nicknguyen.me/static/Topic_model_Gensim_Mallet.html',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1065,7 +1065,7 @@ layout = dbc.Container([
                                         color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/NLP/tree/d115e4edb3ca2092b5cb7e8f59e1d832cf4a6dbc/Topic_modelling',
+                                        href='https://github.com/nicknguyen22/NLP/tree/02512e3efa28fa3186c7c648e637e9c7aa2e80e0/Topic_modelling',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1077,6 +1077,98 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/py_sklearn.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python & Scikit-Learn - Text Classification based on sentiment',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("This notebook leverages text classification techniques using the Scikit-Learn library \
+                                to classify text based on sentiment or tone. It introduces a dataset and showcases the \
+                                use of machine learning tools to automatically categorise text into different sentiment \
+                                categories, providing insights into the emotions or attitudes conveyed within the text.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/1euzXYepej_RJrJvSz3XiAcMCaxVkEhF2?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/NLP/tree/02512e3efa28fa3186c7c648e637e9c7aa2e80e0/Text_classification',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/colab_jup.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python - Sentiment Analysis in Natural Language Processing (NLP) with Vader',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Sentiment analysis plays a pivotal role, enabling us to discern the emotional tone \
+                                and sentiments expressed within textual data. This notebook will revolve around the lexicon, an \
+                                integral component in sentiment analysis. We shall delve into how Vader effectively \
+                                harnesses this lexicon to assign sentiment scores to text data.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://colab.research.google.com/drive/1Uk05wtwA2c_KTKJ-h7kIY0jBr09Ghe9E?usp=sharing',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/NLP/tree/3670554d5854e12166ce19983940f88c499bc459/Sentiment_analysis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+                    
                     ],
                     title='Natural Language Processing (NLP) with Python',
                 ),
