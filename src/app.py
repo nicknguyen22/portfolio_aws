@@ -81,8 +81,7 @@ footer =  dbc.Container([
                         website is currently live on an EC2 instance through Amazon \
                         Web Services (AWS). For Python portfolio web applications, \
                         deployment occurs on AWS Lambda Serverless, complemented by \
-                        an AWS RDS database. In contrast, R Shiny Apps find their \
-                        deployment on Microsoft Azure',
+                        an AWS RDS database.',
                         style={'font-size':'16px', 'font-family':'Georgia'}),
                 ],style={'min-width':350,}),
 

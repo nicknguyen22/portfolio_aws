@@ -414,9 +414,54 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/r_shiny.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('R & Shiny - Exploratory Data Analysis and Visualization with R Shiny',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("The Data Explorer is your go-to R Shiny application for simplifying the often \
+                                complex tasks of Exploratory Data Analysis (EDA) and visualization. This app is designed \
+                                to help gainning deep insights into data, uncover hidden patterns, and communicate the \
+                                findings effectively",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/EDA',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
 
                     ],
-                    title='Data Analysis & Visualisation with Python, Tableau, PowerBI and Looker Studio',
+                    title='Data Analysis & Visualisation with Python, R, Tableau, PowerBI and Looker Studio',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
@@ -958,6 +1003,97 @@ layout = dbc.Container([
                                         size = 'sm',
                                         className="rounded-pill me-1",
                                         href='https://github.com/nicknguyen22/Machine_learning/tree/ced022dedc8453d14866855d1c60cebec51307cf/SVM_Caret_pipeline',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/r_shiny.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P("R & Shiny - Streamlined Data Analysis and Modeling in R Shiny",
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("The EDA and ML Explorer is a powerful R Shiny web application designed to streamline \
+                                your data exploration, analysis, and machine learning model training processes. This \
+                                intuitive tool combines the best of exploratory data analysis (EDA) and machine learning \
+                                (ML) into a single, user-friendly interface.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= '',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_with_pipeline',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/r_shiny.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P("R & Shiny - Brute Force Machine Learning Explorer",
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Unlike traditional machine learning approaches, which often rely on a limited set \
+                                of models and hyperparameters, this app employs the brute force method. It systematically \
+                                explores an extensive range of machine learning algorithms and hyperparameter combinations",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href= '',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_BruteForce',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
