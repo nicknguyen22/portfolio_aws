@@ -319,6 +319,101 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
+                    # Python 4
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/py_plotly.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('Python - Electricity Contract of Different (CfD) Analyzer',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("Python application tailored to assess the value of the electricity CfD. Built with \
+                                an intuitive interface, users can easily input contract specifics and compare the \
+                                prospective offerings side-by-side. One of the app's strengths lies in its ability to \
+                                leverage historical data, allowing users to predict future value by drawing from past \
+                                market trends.",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://yfk9bjcxsl.execute-api.ap-southeast-2.amazonaws.com/cfdanalysis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/DashApps_AWSLambda_ver/tree/bb78c27323d1eb37568fe161fb9a877477fd02f6/CfD_analysis',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
+                    # R-Shiny
+                    dbc.Row([
+                        dbc.Col([
+                            html.Img(src='/assets/img/r_shiny.jpg', style={'width':'100%',
+                                    'max-width':'360px','height':'auto','border-radius':'5px'},
+                                    className='shadow-sm'),
+                            ],style={'min-width':360,'max-width':360}),
+
+                        dbc.Col([
+                            html.P('R & Shiny - Exploratory Data Analysis and Visualization with R Shiny',
+                                style = {'font-size':'15px','text-transform':'uppercase',
+                                    'font-weight':'700'}),
+                            html.P("The Data Explorer is your go-to R Shiny application for simplifying the often \
+                                complex tasks of Exploratory Data Analysis (EDA) and visualization. This app is designed \
+                                to help gainning deep insights into data, uncover hidden patterns, and communicate the \
+                                findings effectively",
+                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                            dbc.Row([
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                        outline=True, color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='',
+                                        disabled=True,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+
+                                dbc.Col(
+                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                        outline=True, 
+                                        color='primary',
+                                        size = 'sm',
+                                        className="rounded-pill me-1",
+                                        href='https://github.com/nicknguyen22/R-Shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/EDA',
+                                        disabled=False,
+                                        target="_blank",
+                                        style = {'font-size':'13px','font-weight':'500',
+                                                'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+                    html.Hr(style={'color':'#adadad'}),
+
                     # Tableau 1
                     dbc.Row([
                         dbc.Col([
@@ -414,54 +509,9 @@ layout = dbc.Container([
 
                     html.Hr(style={'color':'#adadad'}),
 
-                    dbc.Row([
-                        dbc.Col([
-                            html.Img(src='/assets/img/r_shiny.jpg', style={'width':'100%',
-                                    'max-width':'360px','height':'auto','border-radius':'5px'},
-                                    className='shadow-sm'),
-                            ],style={'min-width':360,'max-width':360}),
-
-                        dbc.Col([
-                            html.P('R & Shiny - Exploratory Data Analysis and Visualization with R Shiny',
-                                style = {'font-size':'15px','text-transform':'uppercase',
-                                    'font-weight':'700'}),
-                            html.P("The Data Explorer is your go-to R Shiny application for simplifying the often \
-                                complex tasks of Exploratory Data Analysis (EDA) and visualization. This app is designed \
-                                to help gainning deep insights into data, uncover hidden patterns, and communicate the \
-                                findings effectively",
-                                style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
-                            dbc.Row([
-                                dbc.Col(
-                                    dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
-                                        outline=True, color='primary',
-                                        size = 'sm',
-                                        className="rounded-pill me-1",
-                                        href='',
-                                        disabled=True,
-                                        target="_blank",
-                                        style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'10px','padding-right':'10px'}),),
-
-                                dbc.Col(
-                                    dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
-                                        outline=True, 
-                                        color='primary',
-                                        size = 'sm',
-                                        className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/EDA',
-                                        disabled=False,
-                                        target="_blank",
-                                        style = {'font-size':'13px','font-weight':'500',
-                                                'padding-left':'10px','padding-right':'10px'}),),
-                                    ]),
-                                ]),
-
-                            ],style={'padding-bottom':'20px','padding-top':'20px'}),
-
-                    html.Hr(style={'color':'#adadad'}),
 
                     ],
-                    title='Data Analysis & Visualisation with Python, R, Tableau, PowerBI and Looker Studio',
+                    title='Data Analysis & Visualisation',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
@@ -1048,7 +1098,7 @@ layout = dbc.Container([
                                         color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_with_pipeline',
+                                        href='https://github.com/nicknguyen22/R-Shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_with_pipeline',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1093,7 +1143,7 @@ layout = dbc.Container([
                                         color='primary',
                                         size = 'sm',
                                         className="rounded-pill me-1",
-                                        href='https://github.com/nicknguyen22/r_shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_BruteForce',
+                                        href='https://github.com/nicknguyen22/R-Shiny/tree/97bb20bc321fe092363cd318d4267f981ceab92e/ML_BruteForce',
                                         disabled=False,
                                         target="_blank",
                                         style = {'font-size':'13px','font-weight':'500',
@@ -1106,7 +1156,7 @@ layout = dbc.Container([
                     html.Hr(style={'color':'#adadad'}),
 
                     ],
-                    title='Machine Learning with R and Python',
+                    title='Machine Learning',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
@@ -1306,7 +1356,7 @@ layout = dbc.Container([
                     html.Hr(style={'color':'#adadad'}),
                     
                     ],
-                    title='Natural Language Processing (NLP) with Python',
+                    title='Natural Language Processing (NLP)',
                 ),
             ],flush=True,start_collapsed=True),
         ],style={'backgroundColor':'white'},fluid=False),
