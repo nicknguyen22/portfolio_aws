@@ -65,9 +65,10 @@ layout = dbc.Container([
                 html.P('Python - Computer Vision: Door Detection in Floor Plans Using Keras YOLO',
                         style = {'font-size':'15px','text-transform':'uppercase',
                                 'font-weight':'700'}),
-                html.P('Drawing inspiration from Independent Doors, this Python notebook demonstrates door \
-                        detection in floor plans using Keras and YOLO. It guides readers from image preprocessing \
-                        to model training and evaluation, emphasizing a hands-on approach to computer vision techniques.',
+                html.P('Inspired by idea from Independent Doors, this Python notebook presents a hands-on exploration \
+                    of door detection in floor plans using Computer vision with Keras and YOLO. It provides a breif walkthrough from \
+                    image preprocessing to model training and evaluation. Ultimately, this project seeks to meld \
+                    theoretical knowledge with tangible real-world applications.',
                         style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
                 dbc.Row([
                     dbc.Col(
