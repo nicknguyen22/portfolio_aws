@@ -53,7 +53,52 @@ layout = dbc.Container([
     dbc.Container([
         dbc.Container([
             html.P('MOST RECENT PROJECTS ',style={'font-weight':'500','font-size':'26px'}),
-            
+
+        dbc.Row([
+            dbc.Col([
+                html.Img(src='/assets/img/py_keras.jpg', style={'width':'100%',
+                        'max-width':'360px','height':'auto','border-radius':'5px'},
+                        className='shadow-sm'),
+                    ],style={'min-width':360,'max-width':360}),
+
+            dbc.Col([
+                html.P('Python - Computer Vision: Door Detection in Floor Plans Using Keras YOLO',
+                        style = {'font-size':'15px','text-transform':'uppercase',
+                                'font-weight':'700'}),
+                html.P('Drawing inspiration from Independent Doors, this Python notebook demonstrates door \
+                        detection in floor plans using Keras and YOLO. It guides readers from image preprocessing \
+                        to model training and evaluation, emphasizing a hands-on approach to computer vision techniques.',
+                        style={'font-size':'16px','font-family':'Georgia','margin-bottom':'12px'}),
+                dbc.Row([
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-solid fa-display me-2"),'Live Preview']),
+                                    outline=True, color='primary',
+                                    size = 'sm',
+                                    className="rounded-pill me-1",
+                                    href='https://colab.research.google.com/drive/1NNQlEcF5BMAKnFc2GiMqjZ23HrO5wY8l?usp=sharing',
+                                    disabled=False,
+                                    target="_blank",
+                                    style = {'font-size':'13px','font-weight':'500',
+                                            'padding-left':'10px','padding-right':'10px'}),),
+
+                    dbc.Col(
+                        dbc.Button(html.Span([html.I(className="fa-brands fa-github me-2"),'Code Repository']), 
+                                    outline=True, 
+                                    color='primary',
+                                    size = 'sm',
+                                    className="rounded-pill me-1",
+                                    href='https://github.com/nicknguyen22/Floorplan_Door_Detection.git',
+                                    disabled=False,
+                                    target="_blank",
+                                    style = {'font-size':'13px','font-weight':'500',
+                                            'padding-left':'10px','padding-right':'10px'}),),
+                                    ]),
+                                ]),
+
+                ],style={'padding-bottom':'20px','padding-top':'20px'}),
+
+        html.Hr(style={'color':'#adadad'}),
+
         dbc.Row([
             dbc.Col([
                 html.Img(src='/assets/img/pytorch_keras.jpg', style={'width':'100%',
